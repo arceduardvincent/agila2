@@ -13,7 +13,6 @@ import os
 import environ
 import logging
 from pathlib import Path
-from modules.manifest import get_modules
 
 env = environ.Env()
 
@@ -21,7 +20,10 @@ env = environ.Env()
 DEBUG = env.bool("DEBUG", default=False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = PACKAGE_ROOT
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,9 +36,14 @@ ALLOWED_HOSTS = env.list("HOST", default=["*"])
 
 SITE_ID = 1
 
+# Email Config
+EMAIL_HOST = env.str("EMAIL_HOST", "smtp.sendgrid.net")
+EMAIL_HOST_USER = env.str("SENDGRID_USERNAME", "")
+EMAIL_HOST_PASSWORD = env.str("SENDGRID_PASSWORD", "")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,7 +54,7 @@ INSTALLED_APPS = [
 ]
 
 LOCAL_APPS = [
-    'users.apps.UsersConfig',
+    'core.apps.UsersConfig',
 ]
 
 THIRD_PARTY_APPS = [
@@ -94,7 +101,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'dev.db'),
     }
 }
 
@@ -133,7 +140,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "site_media", "media")
+MEDIA_URL = "/site_media/media/"
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'site_media', 'static')
+STATIC_URL = "/site_media/static/"
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'static'),
+]
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

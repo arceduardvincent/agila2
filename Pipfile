@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "==3.2.9"
 django-environ = "*"
 djangorestframework = "*"
 drf-yasg = "*"
@@ -14,6 +14,7 @@ django-filter = "*"
 django-rest-auth = "*"
 django-allauth = "*"
 django-model-utils = "*"
+asgiref = "*"
 
 [dev-packages]
 

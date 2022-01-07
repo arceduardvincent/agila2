@@ -2,7 +2,7 @@ import uuid
 import os
 
 
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, User
 from django.db import models
 from django.db.models.signals import post_save
 from django.urls import reverse
@@ -16,7 +16,7 @@ from model_utils import Choices
 
 ADMIN_ROLE = 1
 STAFF_ROLE = 2
-USER_ROLE = 3
+CUSTOMER_ROLE = 3
 CONTENT_CREATOR_ROLE = 4
 
 
@@ -26,21 +26,6 @@ def image_file_path(instance, filename):
     filename = f'{uuid.uuid4()}.{ext}'
 
     return os.path.join('', filename)
-
-
-class User(AbstractUser):
-
-    class Meta:
-        verbose_name = _('user')
-        verbose_name_plural = _('users')
-        abstract = True
-
-    
-    def get_absolute_url(self):
-        return reverse("users:detail",
-                       kwargs={"username": self.username}
-                       )
-
 
 class Role(BaseModel):
     name = models.CharField(_('Role Name'), max_length=32)
@@ -59,13 +44,13 @@ class Profile(BaseModel):
                               upload_to=image_file_path,
                               blank=True,
                               null=True)
-    user = models.OneToOneField('users.User',
+    user = models.OneToOneField(User,
                                 on_delete=models.CASCADE,
                                 verbose_name=_('User')
                                 )
     role = models.ForeignKey('users.Role',
                              on_delete=models.CASCADE,
-                             default=USER_ROLE,
+                             default=CUSTOMER_ROLE,
                              verbose_name=_('Role'))
     birth_date = models.DateField(_('Birth Date'),
                                   blank=True,
@@ -100,16 +85,16 @@ class Profile(BaseModel):
 
 
     @cached_property
-    def is_user(self):
-        return self.role_id == USER_ROLE
+    def is_customer(self):
+        return self.role_id == CUSTOMER_ROLE
 
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+# @receiver(post_save, sender=User)
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
 
 
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+# @receiver(post_save, sender=User)
+# def save_user_profile(sender, instance, **kwargs):
+#     instance.profile.save()

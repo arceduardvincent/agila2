@@ -1,0 +1,9 @@
+*.pyc
+env/
+.terraform
+.env
+staticfiles/
+mediafiles/
+local_settings.py
+.idea
+dev.db
