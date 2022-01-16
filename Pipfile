@@ -15,6 +15,7 @@ django-rest-auth = "*"
 django-allauth = "*"
 django-model-utils = "*"
 asgiref = "*"
+django-tinymce = "*"
 
 [dev-packages]
 

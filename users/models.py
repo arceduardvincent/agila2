@@ -27,6 +27,7 @@ def image_file_path(instance, filename):
 
     return os.path.join('', filename)
 
+
 class Role(BaseModel):
     name = models.CharField(_('Role Name'), max_length=32)
     description = models.CharField(
@@ -98,3 +99,25 @@ class Profile(BaseModel):
 # @receiver(post_save, sender=User)
 # def save_user_profile(sender, instance, **kwargs):
 #     instance.profile.save()
+
+class Student(BaseModel):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name=_('User')
+    )
+
+    def __str__(self):
+        return self.user.get_full_name()
+
+
+class Instructor(BaseModel):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name=_('User')
+    )
+
+    def __str__(self):
+        return self.user.get_full_name()
+

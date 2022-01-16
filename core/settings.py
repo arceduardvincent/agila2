@@ -55,9 +55,11 @@ INSTALLED_APPS = [
 
 LOCAL_APPS = [
     'core.apps.UsersConfig',
+    'core.apps.LabConfig',
 ]
 
 THIRD_PARTY_APPS = [
+    'tinymce',
     'rest_framework',
     'rest_framework.authtoken',
 ]

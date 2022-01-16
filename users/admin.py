@@ -7,6 +7,7 @@ from . import models
 
 User = get_user_model()
 
+
 @admin.register(models.Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'role', 'birth_date', 'address',
@@ -20,3 +21,14 @@ class ProfileAdmin(admin.ModelAdmin):
 @admin.register(models.Role)
 class RoleAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'description')
+
+
+@admin.register(models.Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'created', 'modified')
+
+
+@admin.register(models.Instructor)
+class InstructorAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'created', 'modified')
+
