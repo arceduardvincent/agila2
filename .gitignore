@@ -1,5 +1,6 @@
 *.pyc
 env/
+site_media/
 .terraform
 .env
 staticfiles/
