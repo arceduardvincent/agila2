@@ -31,6 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload_image/', views.upload_image),
     path('tinymce/', include('tinymce.urls')),
+    path('', include('audience.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # swagger

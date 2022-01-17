@@ -1,0 +1,46 @@
+[
+{
+    "model": "users.role",
+    "pk": 1,
+    "fields": {
+        "created": "2021-04-03T23:46:08.615Z",
+        "modified": "2021-04-03T23:46:08.615Z",
+        "is_removed": false,
+        "name": "admin",
+        "description": ""
+    }
+},
+{
+    "model": "users.role",
+    "pk": 2,
+    "fields": {
+        "created": "2021-04-03T23:46:17.496Z",
+        "modified": "2021-07-27T07:39:13.681Z",
+        "is_removed": false,
+        "name": "staff",
+        "description": ""
+    }
+},
+{
+    "model": "users.role",
+    "pk": 3,
+    "fields": {
+        "created": "2021-04-03T23:46:17.496Z",
+        "modified": "2021-07-27T07:39:13.681Z",
+        "is_removed": false,
+        "name": "customer",
+        "description": ""
+    }
+},
+{
+    "model": "users.role",
+    "pk": 4,
+    "fields": {
+        "created": "2021-04-03T23:46:17.496Z",
+        "modified": "2021-07-27T07:39:13.681Z",
+        "is_removed": false,
+        "name": "content creator",
+        "description": ""
+    }
+}
+]

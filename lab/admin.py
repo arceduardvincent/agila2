@@ -13,7 +13,7 @@ class CourseAdmin(admin.ModelAdmin):
         js = [
             'tinymce/jquery.tinymce.min.js',
             'tinymce/tinymce.min.js',
-            'tinymce/js/textareas.js'
+            'js/tinymce/js/textareas.js'
         ]
 
 

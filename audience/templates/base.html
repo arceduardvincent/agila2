@@ -1,0 +1,52 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    {% block viewport %}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
+    {% endblock %}
+
+    {% block styles %}
+    {% endblock %}
+
+    {% block extra_head_base %}
+    {% endblock %}
+
+    {% block title %}
+      <title>Agila Market Place</title>
+    {% endblock %}
+  </head>
+  {% block main_body %}
+    <body>
+          {% include 'navbar.html' %}
+
+          <!-- MAIN CONTENT -->
+          <div class="main-content">
+            <div class="container-fluid">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  {% block body_base %}
+                  {% endblock %}
+                    </div>
+              </div> <!-- / .row -->
+            </div>
+          </div> <!-- / .main-content -->
+
+          {% block footer_base %}
+              {% block footer %}
+              {% endblock %}
+          {% endblock %}
+
+          {% block scripts %}
+          {% endblock %}
+
+          {% block extra_body_base %}
+              {% block extra_body %}{% endblock %}
+          {% endblock %}
+    </body>
+  {% endblock %}
+</html>
