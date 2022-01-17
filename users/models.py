@@ -84,6 +84,9 @@ class Profile(BaseModel):
     def is_admin(self):
         return self.role_id == ADMIN_ROLE
 
+    @cached_property
+    def is_staff(self):
+        return self.role_id == STAFF_ROLE
 
     @cached_property
     def is_customer(self):
