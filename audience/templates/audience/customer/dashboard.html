@@ -1,5 +1,136 @@
 {% extends "site_base.html" %}
 
 {% block body_base %}
-<h1>Welcome {{ request.user.profile.role.name }}</h1>
+        <main class="page-container">
+
+            <div class="page-content">
+
+                <section class="page-content-lab mdl-grid">
+
+                    <section class="page-content-lab__content mdl-cell mdl-cell--9-col">
+
+                        <div class="lab__content__image">
+
+                            <img src="assets/img/feat-headerImage.jpg" alt="">
+
+                            <div class="lab_content__image__info">
+
+                                <div class="lab_content__image__info__meta">
+                                    <span>
+                                        <span class="material-icons">trending_up</span>
+                                        Beginner
+                                    </span>
+                                    <span>
+                                        <span class="material-icons">restore</span>
+                                        1 hour 30 minutes
+                                    </span>
+                                </div>
+
+                                <div class="lab_content__image__info__title">Integrate Your GitHub Projects with Azure Pipelines</div>
+
+                                <p class="lab_content__image__info__description">
+                                    Azure Pipelines provides unlimited CI/CD minutes and 10 parallel jobs to every GitHub open source
+                                    project for free. All open source projects run on the same infrastructure that our paying customers
+                                    use.
+                                </p>
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="lab_content__image__info__addToCart">
+                                    <a href="#" class="cs-button">
+                                        <span class="material-icons">add_shopping_cart</span>
+                                         Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <article class="lab__content-lessons">
+                            <div>
+                                <h3>Overview</h3>
+                                <div>
+                                    <p>
+                                        With the introduction of Azure DevOps, Microsoft is offering developers a new continuous
+                                        integration/continuous delivery (CI/CD) service called Azure Pipelines that enables you to
+                                        continuously build, test, and deploy to any platform or cloud. It has cloud-hosted agents for Linux, macOS, and Windows; powerful workflows with native container support; and flexible deployments
+                                        to Kubernetes, VMs, and serverless environments.
+                                    </p>
+                                    <p>
+                                        Azure Pipelines provides unlimited CI/CD minutes and 10 parallel jobs to every GitHub open source
+                                        project for free. All open source projects run on the same infrastructure that our paying customers
+                                        use. That means you’ll have the same fast performance and high quality of service. Many of the top
+                                        open source projects are already using Azure Pipelines for CI/CD, such as Atom, CPython, Pipenv, Tox, Visual Studio Code, and TypeScript-and the list is growing every day
+                                    </p>
+                                    <p>
+                                        In this lab, you’ll see how easy it is to set up Azure Pipelines with your GitHub projects and how you
+                                        can start seeing benefits immediately
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3>Objectives</h3>
+                                <div>
+                                    <ul>
+                                        <li>Install Azure Pipelines from the GitHub Marketplace.</li>
+                                        <li>Integrate a GitHub project with an Azure DevOps pipeline.</li>
+                                        <li>Track pull requests</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3>Pre-requisites</h3>
+                                <div>
+                                    <ul>
+                                        <li>An Azure DevOps account from https://dev.azure.com.</li>
+                                        <li>A GitHub account from https://github.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3>Forking a GitHub repo and installing Azure Pipeline</h3>
+                                <div>
+                                    <p>1. Navigate to https://github.com/actionsdemos/calculator. This is the baseline project we will fork.</p>
+                                    <p>2. If you’re not already signed in to GitHub, sign in now</p>
+                                    <img src="assets/img/task-1-2.PNG" alt="">
+                                    <p>3. Click Fork to fork the repository to your own account.</p>
+                                    <img src="assets/img/task-1-3.PNG" alt="">
+                                </div>
+                            </div>
+
+
+                        </article>
+                    </section>
+
+                    <nav class="page-content-lab__bookmarks mdl-cell mdl-cell--3-col">
+                        <h3>Bookmarks</h3>
+                        <ol class="lab__bookmarks__list">
+                            <li>Overview</li>
+                            <li>Objectives</li>
+                            <li>Pre-requisite</li>
+                            <li>Forking a GitHub repo and installing Azure Pipelines</li>
+                            <li>Configuring your Azure Pipelines project</li>
+                            <li>Modifying a YAML build pipeline definition</li>
+                            <li>Proposing a change via GitHub</li>
+                            <li>Lab Quiz</li>
+                        </ol>
+                    </nav>
+
+                </section>
+
+            </div>
+
+        </main>
 {% endblock %}

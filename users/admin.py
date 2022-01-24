@@ -23,8 +23,8 @@ class RoleAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'description')
 
 
-@admin.register(models.Student)
-class StudentAdmin(admin.ModelAdmin):
+@admin.register(models.Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'created', 'modified')
 
 
