@@ -1,0 +1,87 @@
+{% extends "site_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main_body %}
+<body class="cs-fullpage cs-fullpage--blue">
+
+    <div class="cs-centerForm">
+
+        <div class="cs-centerForm__logo">
+            <img src="{% static 'img/logo-agila.png' %}" alt="">
+            <div class="cs-centerForm__agila"><span>AGILA</span> School of Labs</div>
+            <div class="cs-centerForm__agila-desc">A Product of <img src="{% static 'img/logo-cloudswyft-vertical.png' %}" alt=""></div>
+        </div>
+
+        <form method="post" action="." class="cs-login-form">
+            {% csrf_token %}
+              {% if form.non_field_errors %}
+                {% for err in form.non_field_errors %}
+                  <div class="alert alert-danger alert-dismissible">
+                <span type="button" id="wew" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></span>
+                    {{ err|escape }}.
+                  </div>
+                {% endfor %}
+              {% endif %}
+            <div class="cs-signup-halfbox">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" class="mdl-textfield__input" id="firstName" name="first_name">
+                    <label  class="mdl-textfield__label" for="firstName">First Name</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" class="mdl-textfield__input" id="lastName" name="last_name">
+                    <label  class="mdl-textfield__label" for="lastName">Last Name</label>
+                </div>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield  mdl-textfield--floating-label">
+                <input type="email" class="mdl-textfield__input" id="email" name="email">
+                <label  class="mdl-textfield__label" for="email">Email Address</label>
+                <span class="mdl-textfield__error">Invalid email format.</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield  mdl-textfield--floating-label">
+                <input type="text" class="mdl-textfield__input" id="username" name="username">
+                <label  class="mdl-textfield__label" for="username">Username</label>
+            </div>
+
+            <div class="cs-signup-halfbox">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="password" class="mdl-textfield__input" id="password" name="password">
+                    <label  class="mdl-textfield__label" for="password">Password</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="password" class="mdl-textfield__input" id="confirmPassword" name="password1">
+                    <label  class="mdl-textfield__label" for="confirmPassword">Confirm Password</label>
+                </div>
+            </div>
+
+            <div class="cs-login__rememberme">
+                <div>
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I Agree To the <a href="#">Terms of Use</a></label>
+                </div>
+            </div>
+
+            <div class="cs-login-submit">
+                <input type="submit" class="cs-button" value="Create an Account">
+            </div>
+
+        </form>
+
+        <div class="cs-centerForm__message">
+            I already have an account. <a href="#">Log In</a>
+        </div>
+
+        <div class="cs-centerForm__or">
+            or
+        </div>
+
+        <div class="cs-centerForm__googleLogin">
+            <a href="#"> <img src="{% static 'img/logo-google.png' %}" alt=""> Log in with Google</a>
+        </div>
+
+    </div>
+
+{% endblock %}

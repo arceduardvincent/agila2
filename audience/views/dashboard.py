@@ -4,6 +4,7 @@ from users.models import (
     STAFF_ROLE,
     CUSTOMER_ROLE
 )
+from lab.models import Course
 
 
 class HomeView(TemplateView):
@@ -13,7 +14,11 @@ class HomeView(TemplateView):
 class DashboardView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(DashboardView, self).get_context_data(**kwargs)
-        context.update({'dashboard_view': True})
+        courses = Course.objects.all()
+        context.update({
+            'dashboard_view': True,
+            'courses': courses
+        })
         return context
 
 

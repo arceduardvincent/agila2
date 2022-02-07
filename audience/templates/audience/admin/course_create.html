@@ -1,0 +1,17 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block body_base %}
+<h1>Welcome</h1>
+        <div class="col-lg-12">
+            <form method="post" action="." style="margin: 25px 0;">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="text-right uniForm">
+                    <button type="submit" class="btn btn-primary">{% trans 'Create' %}</button>
+                    <a href="#" class="btn btn-secondary">{% trans 'Cancel' %}</a>
+                </div>
+            </form>
+        </div>
+{% endblock %}

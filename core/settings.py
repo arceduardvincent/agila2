@@ -62,9 +62,12 @@ THIRD_PARTY_APPS = [
     'tinymce',
     'rest_framework',
     'rest_framework.authtoken',
+    'crispy_forms',
 ]
 
 INSTALLED_APPS += LOCAL_APPS + THIRD_PARTY_APPS
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,7 +85,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(PROJECT_ROOT, 'audience', 'templates')
+            os.path.join(PROJECT_ROOT, 'audience', 'templates'),
+            os.path.join(BASE_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -165,6 +169,7 @@ STATICFILES_FINDERS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_REDIRECT_URL = "audience:audience-dashboard"
 
 try:
     from .local_settings import *

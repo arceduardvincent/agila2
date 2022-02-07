@@ -19,6 +19,8 @@ a:hover {
   display: inline-flex;
   font-size: 1.2em;
   align-items: center;
+  border: none;
+  justify-content: center;
 }
 .cs-button .material-icons {
   font-size: 1em;
@@ -27,6 +29,89 @@ a:hover {
 .cs-button:hover {
   color: white;
   background: #009CFF;
+}
+
+.course-card {
+  background: transparent;
+  position: relative;
+}
+.course-card::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 1em;
+  left: 0;
+  z-index: -1;
+}
+.course-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+.course-card .course-card__top {
+  position: relative;
+}
+.course-card .course-card__top::before {
+  content: " ";
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+}
+.course-card .course-card__top__foreground {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+.course-card .course-card__top__foreground > div {
+  margin: 1em;
+}
+.course-card .course-card__top__foreground .course-card__label > div {
+  padding: 0.3em 1.2em;
+  font-size: 0.9em;
+  background: #FFF1FF;
+  display: inline-block;
+  border-radius: 2em;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+}
+.course-card .course-card__top__foreground .course-card__label > div span {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background: #E5A6DE;
+  margin-right: 0.8em;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.course-card .course-card__top__foreground .course-card__title a {
+  font-size: 1.3em;
+  line-height: 1.4em;
+  font-weight: bold;
+}
+.course-card .course-card__bottom {
+  padding: 1em 1em 1.5em 1em;
+}
+.course-card .course-card__bottom .lab_content__image__info__reviews {
+  display: flex;
+  align-items: center;
+}
+.course-card .course-card__bottom .course-card__description {
+  margin: 1em 0;
 }
 
 body .nav-header {
@@ -70,6 +155,117 @@ body .nav-header .mdl-layout__header-row .mdl-layout-title .mdl-layout-title__si
 }
 body .nav-header .mdl-layout__header-row .mdl-layout--large-screen-only a:first-child {
   border-right: 1px solid #E7E6E3;
+}
+
+body.cs-fullpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.cs-fullpage .cs-centerForm {
+  padding: 2em 2em 3em 2em;
+  border: 1px solid #E7E6E3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 480px;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__logo {
+  text-align: center;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__logo img {
+  width: 150px;
+  height: auto;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__logo .cs-centerForm__agila {
+  font-size: 1.4em;
+  line-height: 1.6em;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__logo .cs-centerForm__agila span {
+  color: #009CFF;
+  font-weight: bold;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__logo .cs-centerForm__agila-desc img {
+  width: 100px;
+}
+body.cs-fullpage .cs-centerForm .cs-login-form {
+  padding: 1em 0;
+  width: calc(100% - 4em);
+}
+body.cs-fullpage .cs-centerForm .cs-login-form .cs-login__rememberme {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+body.cs-fullpage .cs-centerForm .cs-login-form .cs-login__rememberme:hover {
+  cursor: pointer;
+}
+body.cs-fullpage .cs-centerForm .cs-login-form .cs-button {
+  width: 100%;
+  text-align: center;
+}
+body.cs-fullpage .cs-centerForm .cs-login-form .cs-login-submit {
+  margin: 2em 0 1.5em 0;
+}
+body.cs-fullpage .cs-centerForm .cs-login-form .cs-login-submit input:hover {
+  cursor: pointer;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__or {
+  display: flex;
+  align-items: center;
+  margin: 1.5em 0;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__or::after, body.cs-fullpage .cs-centerForm .cs-centerForm__or::before {
+  content: " ";
+  width: 150px;
+  height: 2px;
+  background: #E7E6E3;
+  margin: 0 1.5em;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__googleLogin {
+  width: calc(100% - 4em);
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__googleLogin a {
+  background: #EEF6FC;
+  padding: 0.8em;
+  border-radius: 2em;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+  color: #125282;
+  width: calc(100% - 2em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #125282;
+}
+body.cs-fullpage .cs-centerForm .cs-centerForm__googleLogin a img {
+  width: 25px;
+  height: auto;
+  margin-right: 1em;
+}
+body.cs-fullpage .cs-centerForm .mdl-textfield {
+  width: 100%;
+  padding: 20px 0;
+}
+body.cs-fullpage .cs-centerForm .mdl-textfield .mdl-textfield__input {
+  margin-top: 0.5em;
+}
+body.cs-fullpage--blue {
+  background: #125282;
+}
+body.cs-fullpage--blue .cs-centerForm {
+  background: white;
+}
+body.cs-fullpage--blue .cs-centerForm .cs-signup-halfbox {
+  display: flex;
+  justify-content: space-between;
+}
+body.cs-fullpage--blue .cs-centerForm .cs-signup-halfbox .mdl-textfield {
+  flex: 0 0 46%;
 }
 
 html body .nav-footer {
@@ -177,6 +373,114 @@ body .page-content-lab .page-content-lab__content .lab__content-lessons {
 body .page-content-lab .page-content-lab__content .lab__content-lessons img {
   margin-bottom: 1em;
 }
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track {
+  width: 70%;
+  margin: 0 auto 5em auto;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card {
+  padding: 1em 0 1em 4em;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  margin: 1em 0 0 0;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__line {
+  position: absolute;
+  top: 67px;
+  left: 17px;
+  width: 0px;
+  height: 100%;
+  border-right: 2px solid #DADCE0;
+  display: block;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__circle {
+  /* content: " ";*/
+  height: 22px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #125282;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: absolute;
+  top: 67px;
+  left: 7px;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__circle__inner {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: #125282;
+  height: 18px;
+  width: 18px;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:hover .lab_track_card__circle {
+  border: 1px solid green;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:hover .lab_track_card__circle__inner {
+  background: green;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:last-child .lab_track_card__line {
+  display: none;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card > div {
+  margin: 0.5em 0;
+  flex: 0 0 100%;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card > div:last-child::before {
+  height: 80% !important;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__type {
+  color: #125282;
+  flex: 0 0 auto !important;
+  text-align: center;
+  border-radius: 2em;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+  padding: 0.3em 1.2em;
+  display: flex;
+  align-items: center;
+  background: #FFF1FF;
+  font-weight: bold;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__type span {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background: #E5A6DE;
+  margin-right: 0.8em;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__title h4 {
+  margin: 0;
+  color: #125282;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__description {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo {
+  display: flex;
+  justify-content: flex-start;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__reviews {
+  display: flex;
+  align-items: center;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__meta {
+  margin-left: 2em;
+  display: flex;
+}
+body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__meta span {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+}
 body .page-content-lab .page-content-lab__bookmarks {
   position: -webkit-sticky;
   position: sticky;
@@ -209,6 +513,95 @@ body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list li:bef
   padding: 0.5em;
   color: #125282;
   font-weight: bold;
+}
+body .page-content-recommendations {
+  margin: 3em 0 5em 0;
+}
+body .page-content-recommendations h3 {
+  text-align: center;
+  color: #125282;
+}
+body .page-content__reviews {
+  background: #F8FCFF;
+  text-align: center;
+  padding: 3em 0;
+}
+body .page-content__reviews h3 {
+  font-weight: bold;
+  color: #125282;
+  margin-bottom: 2em;
+}
+body .page-content__reviews .reviews {
+  display: flex;
+  justify-content: space-between;
+}
+body .page-content__reviews .reviews-overall {
+  padding: 0 3em;
+}
+body .page-content__reviews .reviews-overall__stats {
+  margin-bottom: 2em;
+}
+body .page-content__reviews .reviews-overall__stats span:first-child {
+  font-size: 3em;
+  font-weight: bold;
+  color: #125282;
+}
+body .page-content__reviews .reviews-overall__stats span:last-child {
+  font-size: 1.4em;
+}
+body .page-content__reviews .reviews-overall__ratings {
+  padding: 0.5em 7em;
+}
+body .page-content__reviews .reviews-overall__ratings__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7em 1em;
+  background: #C7DEEE;
+  border-radius: 2em;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  color: #125282;
+}
+body .page-content__reviews .reviews-overall__ratings__row .material-icons {
+  margin-right: 0.5em;
+}
+body .page-content__reviews .reviews-overall__ratings__row .bufferbar, body .page-content__reviews .reviews-overall__ratings__row .progressbar {
+  padding: 0.2em;
+  border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+}
+body .page-content__reviews .reviews-overall__ratings__row .progressbar {
+  background: #125282;
+}
+body .page-content__reviews .reviews-overall__total {
+  margin: 0.5em 0 3em 0;
+  font-size: 1.4em;
+}
+body .page-content__reviews .reviews-list {
+  padding: 0 3em;
+}
+body .page-content__reviews .reviews-list .review-card {
+  text-align: left;
+  margin: 1em 0 2em 0;
+}
+body .page-content__reviews .reviews-list .review-card .review-card__user {
+  display: flex;
+  align-items: center;
+}
+body .page-content__reviews .reviews-list .review-card .review-card__user > span:first-child {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+body .page-content__reviews .reviews-list .review-card .review-card__text {
+  margin: 1em 0 0.5em 0;
+}
+body .page-content__reviews .reviews-list .review-card .review-card__date {
+  font-style: italic;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -61,10 +61,9 @@ class Course(BaseModel):
     def __str__(self):
         return self.title
 
-    def get_total_question(self):
+    def get_lessons(self):
         lessons = Lesson.objects.filter(course=self)
-
-        return lessons.count()
+        return lessons
 
 
 class Lesson(BaseModel):
@@ -74,6 +73,7 @@ class Lesson(BaseModel):
     )
     title = models.CharField(max_length=255,  null=True)
     content = tinymce_models.HTMLField()
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
@@ -94,6 +94,7 @@ class Question(BaseModel):
         max_length=255, choices=TYPE_QUESTION,
         default='Multiple Choice'
     )
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
@@ -120,7 +121,7 @@ class SubscriberChoice(BaseModel):
         ordering = ['-created']
 
 
-class SubscriberStatus(BaseModel):
+class SubscriberCourseStatus(BaseModel):
     STATUS = Choices('Complete', 'Incomplete')
     status = models.CharField(max_length=255, choices=STATUS,
                               default=STATUS.Incomplete)
@@ -131,7 +132,7 @@ class SubscriberStatus(BaseModel):
         return self.status
 
     class Meta:
-        verbose_name = "SubscriberStatus"
-        verbose_name_plural = "SubscriberStatuses"
+        verbose_name = "SubscriberCourseStatus"
+        verbose_name_plural = "SubscriberCourseStatuses"
         ordering = ['-created']
 

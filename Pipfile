@@ -16,6 +16,7 @@ django-allauth = "*"
 django-model-utils = "*"
 asgiref = "*"
 django-tinymce = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 

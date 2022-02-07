@@ -19,7 +19,7 @@ class ChoiceInline(admin.StackedInline):
 class QuestionInline(admin.StackedInline):
     extra = 0
     fieldsets = (
-        ("Choices", {
+        ("Questions", {
             'fields': (
                 ('title', 'type_question'),
             ),
@@ -29,11 +29,25 @@ class QuestionInline(admin.StackedInline):
     model = models.Question
 
 
+class LessonInline(admin.StackedInline):
+    extra = 0
+    fieldsets = (
+        ("Lessons", {
+            'fields': (
+                ('title', 'course', 'is_active'),
+            ),
+        }),
+
+    )
+    model = models.Lesson
+
+
 @admin.register(models.Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'instructor', 'difficulty',
+    list_display = ('id', 'title', 'instructor', 'difficulty',  'is_active',
                     'created', 'modified',)
     search_fields = ('title',)
+    inlines = (LessonInline,)
 
     class Media:
         js = [
@@ -55,20 +69,21 @@ class DifficultyAdmin(admin.ModelAdmin):
 
 @admin.register(models.Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('title', 'type_question', 'created', 'modified')
+    list_display = ('title', 'type_question',  'is_active',
+                    'created', 'modified')
     inlines = (ChoiceInline,)
     save_on_top = True
 
 
 @admin.register(models.Lesson)
 class LessonAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content', 'created', 'modified')
+    list_display = ('title', 'course',  'is_active', 'created', 'modified')
     inlines = (QuestionInline,)
     save_on_top = True
 
 
-@admin.register(models.SubscriberStatus)
-class SubscriberStatusAdmin(admin.ModelAdmin):
+@admin.register(models.SubscriberCourseStatus)
+class SubscriberCourseStatusAdmin(admin.ModelAdmin):
     list_display = ('user', 'status', 'course', 'created', 'modified')
     save_on_top = True
 

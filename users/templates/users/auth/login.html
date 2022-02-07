@@ -1,0 +1,58 @@
+{% extends "site_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block main_body %}
+<body class="cs-fullpage">
+    <div class="cs-centerForm">
+        <div class="cs-centerForm__logo">
+            <img src="{% static 'img/logo-agila.png' %}" alt="">
+            <div class="cs-centerForm__agila"><span>AGILA</span> School of Labs</div>
+            <div class="cs-centerForm__agila-desc">A Product of <img src="{% static 'img/logo-cloudswyft-vertical.png' %}" alt=""></div>
+        </div>
+        <form method="post" action="." class="cs-login-form">
+            {% csrf_token %}
+            <div class="mdl-textfield mdl-js-textfield  mdl-textfield--floating-label">
+                <input type="text" class="mdl-textfield__input form-control" id="id_username"  name="username" pattern="[A-Z,a-z,0-9]*">
+                <label  class="mdl-textfield__label" for="id_username">{% trans 'Username' %}</label>
+                {% if form.username.errors %}
+                  {% for error in form.username.errors %}
+                        <span class="mdl-textfield__error">{{ err|escape }}.</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-group">
+                <input type="password" class="mdl-textfield__input form-control" id="password" name="password">
+                <label  class="mdl-textfield__label" for="password">{% trans 'Password' %}</label>
+                {% if form.password.errors %}
+                  {% for error in form.password.errors %}
+                        <span class="mdl-textfield__error">{{ err|escape }}.</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="cs-login__rememberme">
+                <div>
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember Me</label>
+                </div>
+
+                <div><a href="#">Forgot Password?</a></div>
+            </div>
+
+            <div class="cs-login-submit">
+                <input type="submit" class="cs-button" value="{% trans 'Login' %}">
+            </div>
+        </form>
+        <div class="cs-centerForm__message">
+            Do you have an account? <a href="#">Create an Account</a>
+        </div>
+        <div class="cs-centerForm__or">
+            or
+        </div>
+        <div class="cs-centerForm__googleLogin">
+            <a href="#"> <img src="{% static 'img/logo-google.png' %}" alt=""> Log in with Google</a>
+        </div>
+    </div>
+</body>
+{% endblock %}
