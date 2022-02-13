@@ -11,9 +11,10 @@ from django.views.generic import (
     CreateView,
     UpdateView,
     DeleteView,
-    DetailView
+    DetailView,
+    TemplateView
 )
-from lab.models import Course
+from lab.models import Course, Lesson
 from audience.forms import CreateCourseForm
 
 
@@ -31,3 +32,19 @@ class CreateCourseView(CreateView):
     template_name = 'audience/admin/course_create.html'
     form_class = CreateCourseForm
     success_url = reverse_lazy('audience:audience-dashboard')
+
+
+class LabtrackView(DetailView):
+    template_name = 'audience/customer/lab_track.html'
+
+    def get(self, request, *args, **kwargs):
+        pk = self.kwargs['pk']
+        course = Course.objects.get(pk=pk)
+        lessons = Lesson.objects.filter(course=course)
+        context = {
+            'course': course,
+            'lessons': lessons,
+        }
+        return render(request, self.template_name, context)
+
+

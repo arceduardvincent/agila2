@@ -1,0 +1,396 @@
+{% extends "site_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block body_base %}
+        <main class="page-container">
+
+            <div class="page-content">
+
+                <section class="page-content-lab mdl-grid">
+
+                    <section class="page-content-lab__content mdl-cell mdl-cell--12-col">
+
+                        <div class="lab__content__image">
+
+                            <img src="assets/img/feat-headerImage.jpg" alt="">
+
+                            <div class="lab_content__image__info">
+
+                                <div class="lab_content__image__info__meta">
+                                    <span>
+                                        <span class="material-icons">trending_up</span>
+                                        Beginner
+                                    </span>
+                                    <span>
+                                        <span class="material-icons">restore</span>
+                                        1 hour 30 minutes
+                                    </span>
+                                </div>
+
+                                <div class="lab_content__image__info__title">{{ course.title }}</div>
+
+                                <p class="lab_content__image__info__description">
+                                    {{ course.short_description }}
+                                </p>
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="lab_content__image__info__addToCart">
+                                    <a href="#" class="cs-button">
+                                        <span class="material-icons">add_shopping_cart</span>
+                                         Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <article class="lab__content-lessons--track">
+
+                            {% for lesson in lessons %}
+                                <div class="lab_track_card">
+                                    <span class="lab_track_card__line"></span>
+                                    <span class="lab_track_card__circle">
+                                        <span class="lab_track_card__circle__inner"></span>
+                                    </span>
+                                    <div class="lab_track_card__type">
+                                        <span></span>Lab
+                                    </div>
+                                    <div class="lab_track_card__title">
+                                        <h4><a href="#">{{ lesson.title }}</a></h4>
+                                    </div>
+                                    <div class="lab_track_card__description">
+                                        {{ lesson.content|safe }}
+                                    </div>
+                                    <div class="lab_track_card__metaInfo">
+                                        <div class="lab_content__image__info__reviews">
+                                            <span>
+                                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                                <span class="material-icons material-icons-star">star_rate</span>
+                                            </span>
+                                            <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                        </div>
+
+                                        <div class="lab_content__image__info__meta">
+                                            <span>
+                                                <span class="material-icons">trending_up</span>
+                                                Beginner
+                                            </span>
+                                            <span>
+                                                <span class="material-icons">restore</span>
+                                                1 hour 30 minutes
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </article>
+                    </section>
+
+                </section>
+
+                <section class="page-content__reviews">
+
+                    <div class=""><h3>Reviews</h3></div>
+
+                    <div class="reviews">
+
+                        <div class="reviews-overall">
+                            <div class="reviews-overall__stats">
+                                <span>4.6</span>
+                                <span>out of 5</span>
+                            </div>
+                            <div class="reviews-overall__ratings">
+                                <div class="reviews-overall__ratings__row">
+                                    <span>5</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar5" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>4</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar4" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>3</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar3" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>2</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar2" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>1</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar1" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                            </div>
+
+                            <div class="reviews-overall__total">(41 reviews)</div>
+
+                            <a href="#" class="cs-button">Write a Review</a>
+
+                        </div>
+
+                        <div class="reviews-list">
+
+
+                            <div class="review-card">
+
+                                <div class="review-card__user">
+                                    <span>Jan Doe</span>
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                    </span>
+                                </div>
+
+                                <div class="review-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <div class="review-card__date">
+                                    May 2, 2022
+                                </div>
+
+                            </div>
+
+                            <div class="review-card">
+
+                                <div class="review-card__user">
+                                    <span>Jan Doe</span>
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                    </span>
+                                </div>
+
+                                <div class="review-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <div class="review-card__date">
+                                    May 2, 2022
+                                </div>
+
+                            </div>
+
+                            <div class="review-card">
+
+                                <div class="review-card__user">
+                                    <span>Jan Doe</span>
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                    </span>
+                                </div>
+
+                                <div class="review-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <div class="review-card__date">
+                                    May 2, 2022
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+                <section class="page-content-recommendations">
+
+                    <h3>Recommended Labs</h3>
+
+                    <div class="course-cards mdl-grid">
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="assets//img/feat-recommended1.jpg" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="assets//img/feat-recommended1.jpg" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="assets//img/feat-recommended1.jpg" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+
+
+{% endblock %}

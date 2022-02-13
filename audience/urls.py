@@ -10,4 +10,6 @@ urlpatterns = [
         name='course-content-view'),
     url(r'^course/create/$', login_required(CreateCourseView.as_view()),
         name='audience-course-create'),
+    url(r'^lab/track/(?P<pk>\d+)$', LabtrackView.as_view(),
+        name='audience-lab-track'),
 ]

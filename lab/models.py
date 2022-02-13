@@ -37,6 +37,7 @@ class Category(BaseModel):
 class Course(BaseModel):
     code = models.CharField(_('Code'), max_length=250)
     title = models.CharField(_('Title'), max_length=250)
+    short_description = models.CharField(_('Short Description'), null=True, max_length=250)
     difficulty = models.ForeignKey(
         'lab.Difficulty',
         verbose_name=_('Difficulty'),
