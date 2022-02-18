@@ -21,7 +21,7 @@ class QuestionInline(admin.StackedInline):
     fieldsets = (
         ("Questions", {
             'fields': (
-                ('title', 'content', 'type_question'),
+                ('title', 'type_question'),
             ),
         }),
 
