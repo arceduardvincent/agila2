@@ -21,6 +21,15 @@ a:hover {
   align-items: center;
   border: none;
   justify-content: center;
+  cursor: pointer;
+}
+.cs-button--green {
+  background: #63BB6C;
+}
+.cs-button--white {
+  background: white;
+  color: #666666;
+  border: 1px solid #E7E6E3;
 }
 .cs-button .material-icons {
   font-size: 1em;
@@ -112,6 +121,188 @@ a:hover {
 }
 .course-card .course-card__bottom .course-card__description {
   margin: 1em 0;
+}
+
+.logo-layout {
+  font-size: 1.3em;
+  margin: 2em 0;
+}
+.logo-layout__mainLogo {
+  display: flex;
+  justify-content: center;
+}
+.logo-layout__mainLogo img {
+  width: 100px;
+  height: auto;
+}
+.logo-layout__siteInfo {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.logo-layout__siteInfo > div {
+  display: flex;
+  align-items: center;
+}
+.logo-layout__siteInfo__agila {
+  color: #009CFF;
+  font-weight: bold;
+  margin-right: 0.3em;
+}
+
+.cs-inputText {
+  margin-bottom: 1em;
+}
+.cs-inputText input[type=text] {
+  padding: 1.5em;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border: 1px solid #E7E6E3;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+.cs-inputText textarea {
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border: 1px solid #E7E6E3;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+}
+.cs-inputText--dialog {
+  position: relative;
+}
+.cs-inputText--dialog .material-icons {
+  position: absolute;
+  top: 0.8em;
+  left: 0.7em;
+  color: #125282;
+}
+.cs-inputText--dialog input[type=text] {
+  padding-left: 3.5em;
+  margin-bottom: 1.5em;
+}
+
+.ui-widget-overlay {
+  background: black;
+  opacity: 0.8;
+}
+
+.ui-widget.ui-widget-content {
+  border-radius: 0.5em;
+}
+
+.ui-dialog-titlebar {
+  background: none;
+  border: none;
+}
+
+.ui-dialog-title {
+  text-align: center;
+}
+
+.ui-dialog .ui-dialog-title {
+  width: 100%;
+  font-size: 1.2em;
+  color: #125282;
+  padding: 1em 0;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  display: flex;
+  justify-content: center;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+  padding: 1em 1.5em;
+  border-radius: 2em;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+  border: 1px solid #E7E6E3;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  background: #125282;
+  color: white;
+}
+
+.dialog-box .dialog-courses {
+  overflow-y: auto;
+}
+.dialog-box .dialog-courses .dialog-course {
+  display: flex;
+  align-items: center;
+  padding: 1.5em;
+  border: 1px solid #E7E6E3;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+.dialog-box .dialog-courses .dialog-course--selected {
+  border: 1px solid #125282;
+}
+.dialog-box .dialog-courses .dialog-course--selected .dialog-course__select {
+  color: green;
+}
+.dialog-box .dialog-courses .dialog-course__details__title {
+  font-size: 1.5em;
+  color: #125282;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.dialog-box .dialog-courses .dialog-course__details__description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.dialog-box .dialog-courses .dialog-course__select {
+  flex: 0 0 40px;
+  text-align: right;
+}
+
+.accordion h3 {
+  font-size: 1.3em !important;
+  color: #125282 !important;
+}
+
+.ui-accordion-header {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #E7E6E3;
+}
+.ui-accordion-header-icon {
+  position: absolute;
+  right: 0.5em;
+  top: 1em;
+  font-size: 2em;
+  color: #125282;
+}
+
+.ui-accordion-content label {
+  font-size: 1.2em !important;
+}
+
+.ui-widget-content {
+  border: none;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 0;
+  margin-top: 1em;
+}
+
+.ui-selectmenu-button {
+  width: 100%;
 }
 
 body .nav-header {
@@ -268,6 +459,217 @@ body.cs-fullpage--blue .cs-centerForm .cs-signup-halfbox .mdl-textfield {
   flex: 0 0 46%;
 }
 
+html body .page-admin {
+  display: flex;
+  align-items: stretch;
+}
+html body .page-admin .cs-admin-nav {
+  flex: 0 0 15%;
+  background: #F1F5F9;
+}
+html body .page-admin .cs-admin-nav-links ul li {
+  padding: 1em 1.5em 1em 2em;
+  position: relative;
+  margin-bottom: 1em;
+}
+html body .page-admin .cs-admin-nav-links ul li.cs-admin-nav-link--active, html body .page-admin .cs-admin-nav-links ul li:hover {
+  background: #C7DEEE;
+  cursor: pointer;
+}
+html body .page-admin .cs-admin-nav-links ul li.cs-admin-nav-link--active a, html body .page-admin .cs-admin-nav-links ul li:hover a {
+  color: #125282;
+}
+html body .page-admin .cs-admin-nav-links ul li.cs-admin-nav-link--active:before, html body .page-admin .cs-admin-nav-links ul li:hover:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 0.5em;
+  height: 100%;
+  background: #125282;
+}
+html body .page-admin .cs-admin-nav-links ul li a {
+  display: flex;
+  align-items: center;
+  color: #666666;
+}
+html body .page-admin .cs-admin-nav-links ul li .material-icons {
+  margin-right: 0.5em;
+}
+html body .page-admin .cs-admin-panel {
+  flex: 0 0 85%;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+html body .page-admin .cs-admin-panel .admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border: 1px solid #E7E6E3;
+}
+html body .page-admin .cs-admin-panel .admin-header .admin-header__left {
+  font-size: 2em;
+  color: #125282;
+  font-weight: bold;
+  padding: 0 0.25em;
+  display: flex;
+  align-items: center;
+}
+html body .page-admin .cs-admin-panel .admin-header .admin-header__left .material-icons {
+  margin-right: 0.5em;
+}
+html body .page-admin .cs-admin-panel .admin-header .admin-header__right {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+html body .page-admin .cs-admin-panel .admin-header .admin-header__right .admin-header__image {
+  margin-right: 1em;
+}
+html body .page-admin .cs-admin-panel .admin-header .admin-header__right .admin-header__image img {
+  width: 45px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+html body .page-admin .cs-admin-panel .admin-header .admin-header__right .admin-header__details__name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+html body .page-admin .cs-admin-panel .admin-content h3 {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: #666666;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course {
+  display: flex;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .mdl-textfield {
+  width: 50%;
+  padding: 20px 0;
+  font-size: 0.8em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .mdl-textfield .mdl-textfield__input {
+  margin-top: 0.5em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left {
+  flex: 0 0 75%;
+  border-right: 1px solid #E7E6E3;
+  padding-right: 1.5em;
+  box-sizing: border-box;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+  background: #125282 !important;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__tab-bar {
+  justify-content: flex-start;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__tab-bar .mdl-tabs__tab {
+  font-weight: bold;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__tab-bar.is-active:after {
+  background: #125282 !important;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__tab-bar.is-active:after .mdl-tabs__tab {
+  color: #125282;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel {
+  padding: 0 1.5em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel .courses-panel__header--2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable {
+  margin-bottom: 0;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable .sort-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  /* fallback if grab cursor is unsupported */
+  margin: 0 0 2em 0;
+  background: none;
+  border: none;
+  box-shadow: 1px 1px 2px #e4e1e1;
+  background: white;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable .sort-box-dragIcon {
+  flex: 0 0 3%;
+  align-self: flex-start;
+  margin-top: 1.2em;
+  color: #125282;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable .sort-box-details {
+  flex: 1 0 80%;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable .sort-box-details div {
+  padding: 0.5em 0;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable .sort-box-details__title {
+  font-size: 2em;
+  color: #125282;
+  font-weight: bold;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable .sort-box-actions {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel ul#sortable .sort-box-actions span {
+  padding-right: 0.5em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-left .mdl-tabs__panel .courses-panel__addCourse {
+  display: flex;
+  justify-content: center;
+  border: 1px dashed #009CFF;
+  padding: 2em 0;
+  border-radius: 2em;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-right {
+  padding: 2em;
+  flex: 0 0 25%;
+  box-sizing: border-box;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-right .admin-publish {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-right .admin-publish a {
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-right .admin-publish a:first-child {
+  margin-right: 0.8em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-right .admin-thumbnail {
+  border: 1px solid gray;
+  padding: 1em;
+  text-align: center;
+  color: gray;
+  background: #E7E6E3;
+  margin: 2em 0 1em 0;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-right .admin-thumbnail > div {
+  padding: 6em 0;
+  border: 1px dashed gray;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+}
+html body .page-admin .cs-admin-panel .admin-content .frm-lab-course .admin-content-right .accordion .cs-inputText input[type=text] {
+  padding: 1em;
+}
+
 html body .nav-footer {
   display: flex;
   justify-content: space-between;
@@ -296,20 +698,23 @@ html body .nav-footer .nav-footer__right a {
   color: #FFB725;
 }
 
-body .page-content {
+html body#cs-page {
+  font-family: "Open Sans", sans-serif !important;
+}
+html body .page-content {
   padding: 0 80px;
 }
-body .page-content-lab {
+html body .page-content-lab {
   align-items: flex-start;
   padding: 0;
 }
-body .page-content-lab .page-content-lab__content {
+html body .page-content-lab .page-content-lab__content {
   margin: 0;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image {
+html body .page-content-lab .page-content-lab__content .lab__content__image {
   position: relative;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image:before {
+html body .page-content-lab .page-content-lab__content .lab__content__image:before {
   content: " ";
   width: 100%;
   min-height: 100%;
@@ -319,7 +724,7 @@ body .page-content-lab .page-content-lab__content .lab__content__image:before {
   left: 0;
   z-index: 2;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image img {
+html body .page-content-lab .page-content-lab__content .lab__content__image img {
   position: absolute;
   width: 100%;
   max-height: 100%;
@@ -328,63 +733,63 @@ body .page-content-lab .page-content-lab__content .lab__content__image img {
   left: 0;
   z-index: 1;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info {
   position: relative;
   z-index: 3;
   padding: 3em;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__meta {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__meta {
   display: flex;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__meta > span {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__meta > span {
   display: flex;
   align-items: center;
   padding: 0 2em 0 0;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__meta > span > span {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__meta > span > span {
   margin-right: 0.2em;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__title {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__title {
   font-size: 3em;
   line-height: 1.2em;
   padding: 0.5em 0;
   font-weight: bold;
   color: #125282;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__description {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__description {
   font-size: 1.2em;
   line-height: 1.6em;
   width: 80%;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__addToCart {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__addToCart {
   margin-top: 1em;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__reviews {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__reviews {
   display: flex;
   align-items: center;
 }
-body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__reviews__count {
+html body .page-content-lab .page-content-lab__content .lab__content__image .lab_content__image__info__reviews__count {
   color: black;
   font-weight: bold;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons {
   margin-bottom: 2em;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons img {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons img {
   margin-bottom: 1em;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track {
   width: 70%;
   margin: 0 auto 5em auto;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card {
   padding: 1em 0 1em 4em;
   display: flex;
   flex-flow: row wrap;
   position: relative;
   margin: 1em 0 0 0;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__line {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__line {
   position: absolute;
   top: 67px;
   left: 17px;
@@ -393,7 +798,7 @@ body .page-content-lab .page-content-lab__content .lab__content-lessons--track .
   border-right: 2px solid #DADCE0;
   display: block;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__circle {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__circle {
   /* content: " ";*/
   height: 22px;
   width: 22px;
@@ -409,7 +814,7 @@ body .page-content-lab .page-content-lab__content .lab__content-lessons--track .
   top: 67px;
   left: 7px;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__circle__inner {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__circle__inner {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -417,23 +822,23 @@ body .page-content-lab .page-content-lab__content .lab__content-lessons--track .
   height: 18px;
   width: 18px;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:hover .lab_track_card__circle {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:hover .lab_track_card__circle {
   border: 1px solid green;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:hover .lab_track_card__circle__inner {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:hover .lab_track_card__circle__inner {
   background: green;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:last-child .lab_track_card__line {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card:last-child .lab_track_card__line {
   display: none;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card > div {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card > div {
   margin: 0.5em 0;
   flex: 0 0 100%;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card > div:last-child::before {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card > div:last-child::before {
   height: 80% !important;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__type {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__type {
   color: #125282;
   flex: 0 0 auto !important;
   text-align: center;
@@ -446,7 +851,7 @@ body .page-content-lab .page-content-lab__content .lab__content-lessons--track .
   background: #FFF1FF;
   font-weight: bold;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__type span {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__type span {
   height: 10px;
   width: 10px;
   display: inline-block;
@@ -456,57 +861,57 @@ body .page-content-lab .page-content-lab__content .lab__content-lessons--track .
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__title h4 {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__title h4 {
   margin: 0;
   color: #125282;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__description {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__description {
   font-size: 1.2em;
   line-height: 1.6em;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo {
   display: flex;
   justify-content: flex-start;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__reviews {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__reviews {
   display: flex;
   align-items: center;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__meta {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__meta {
   margin-left: 2em;
   display: flex;
 }
-body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__meta span {
+html body .page-content-lab .page-content-lab__content .lab__content-lessons--track .lab_track_card__metaInfo .lab_content__image__info__meta span {
   display: flex;
   align-items: center;
   margin-right: 0.5em;
 }
-body .page-content-lab .page-content-lab__bookmarks {
+html body .page-content-lab .page-content-lab__bookmarks {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 0 3em;
 }
-body .page-content-lab .page-content-lab__bookmarks h3 {
+html body .page-content-lab .page-content-lab__bookmarks h3 {
   color: #125282;
   font-size: 1.8em;
   font-weight: bold;
   margin-bottom: 0.3em;
 }
-body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list {
+html body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list {
   list-style-type: none;
   counter-reset: li;
   padding: 0;
   margin: 0;
   font-size: 1.2em;
 }
-body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list li {
+html body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list li {
   display: flex;
   align-items: center;
   line-height: 1.2em;
   padding: 0.3em 0;
 }
-body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list li:before {
+html body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list li:before {
   counter-increment: li;
   content: counter(li, decimal-leading-zero);
   font-size: 1.4rem;
@@ -514,45 +919,45 @@ body .page-content-lab .page-content-lab__bookmarks .lab__bookmarks__list li:bef
   color: #125282;
   font-weight: bold;
 }
-body .page-content-recommendations {
+html body .page-content-recommendations {
   margin: 3em 0 5em 0;
 }
-body .page-content-recommendations h3 {
+html body .page-content-recommendations h3 {
   text-align: center;
   color: #125282;
 }
-body .page-content__reviews {
+html body .page-content__reviews {
   background: #F8FCFF;
   text-align: center;
   padding: 3em 0;
 }
-body .page-content__reviews h3 {
+html body .page-content__reviews h3 {
   font-weight: bold;
   color: #125282;
   margin-bottom: 2em;
 }
-body .page-content__reviews .reviews {
+html body .page-content__reviews .reviews {
   display: flex;
   justify-content: space-between;
 }
-body .page-content__reviews .reviews-overall {
+html body .page-content__reviews .reviews-overall {
   padding: 0 3em;
 }
-body .page-content__reviews .reviews-overall__stats {
+html body .page-content__reviews .reviews-overall__stats {
   margin-bottom: 2em;
 }
-body .page-content__reviews .reviews-overall__stats span:first-child {
+html body .page-content__reviews .reviews-overall__stats span:first-child {
   font-size: 3em;
   font-weight: bold;
   color: #125282;
 }
-body .page-content__reviews .reviews-overall__stats span:last-child {
+html body .page-content__reviews .reviews-overall__stats span:last-child {
   font-size: 1.4em;
 }
-body .page-content__reviews .reviews-overall__ratings {
+html body .page-content__reviews .reviews-overall__ratings {
   padding: 0.5em 7em;
 }
-body .page-content__reviews .reviews-overall__ratings__row {
+html body .page-content__reviews .reviews-overall__ratings__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -565,42 +970,42 @@ body .page-content__reviews .reviews-overall__ratings__row {
   font-size: 1.2em;
   color: #125282;
 }
-body .page-content__reviews .reviews-overall__ratings__row .material-icons {
+html body .page-content__reviews .reviews-overall__ratings__row .material-icons {
   margin-right: 0.5em;
 }
-body .page-content__reviews .reviews-overall__ratings__row .bufferbar, body .page-content__reviews .reviews-overall__ratings__row .progressbar {
+html body .page-content__reviews .reviews-overall__ratings__row .bufferbar, html body .page-content__reviews .reviews-overall__ratings__row .progressbar {
   padding: 0.2em;
   border-radius: 0.2em;
   -moz-border-radius: 0.2em;
   -webkit-border-radius: 0.2em;
 }
-body .page-content__reviews .reviews-overall__ratings__row .progressbar {
+html body .page-content__reviews .reviews-overall__ratings__row .progressbar {
   background: #125282;
 }
-body .page-content__reviews .reviews-overall__total {
+html body .page-content__reviews .reviews-overall__total {
   margin: 0.5em 0 3em 0;
   font-size: 1.4em;
 }
-body .page-content__reviews .reviews-list {
+html body .page-content__reviews .reviews-list {
   padding: 0 3em;
 }
-body .page-content__reviews .reviews-list .review-card {
+html body .page-content__reviews .reviews-list .review-card {
   text-align: left;
   margin: 1em 0 2em 0;
 }
-body .page-content__reviews .reviews-list .review-card .review-card__user {
+html body .page-content__reviews .reviews-list .review-card .review-card__user {
   display: flex;
   align-items: center;
 }
-body .page-content__reviews .reviews-list .review-card .review-card__user > span:first-child {
+html body .page-content__reviews .reviews-list .review-card .review-card__user > span:first-child {
   font-size: 1.3em;
   font-weight: bold;
   margin-right: 0.5em;
 }
-body .page-content__reviews .reviews-list .review-card .review-card__text {
+html body .page-content__reviews .reviews-list .review-card .review-card__text {
   margin: 1em 0 0.5em 0;
 }
-body .page-content__reviews .reviews-list .review-card .review-card__date {
+html body .page-content__reviews .reviews-list .review-card .review-card__date {
   font-style: italic;
 }
 

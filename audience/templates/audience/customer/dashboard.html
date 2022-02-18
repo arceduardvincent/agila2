@@ -9,20 +9,22 @@
                             <img src="assets/img/feat-headerImage.jpg" alt="">
                             <div class="lab_content__image__info">
                                 <div class="lab_content__image__info__title">Authenticated Dashboard</div>
-                                    {% for course in courses %}
-                                    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
-                                      <figure class="mdl-card__media">
-                                      </figure>
-                                      <div class="mdl-card__title">
-                                        <h1 class="mdl-card__title-text">
-                                            <a href="{% url 'audience:course-content-view' course.id %}">{{ course }}</a>
-                                        </h1>
-                                      </div>
-                                      <div class="mdl-card__supporting-text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.</p>
-                                      </div>
+                                    <div class="mdl-grid">
+                                        {% for course in courses %}
+                                        <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+                                          <figure class="mdl-card__media">
+                                          </figure>
+                                          <div class="mdl-card__title">
+                                            <h1 class="mdl-card__title-text">
+                                                <a href="{% url 'audience:course-content-view' course.id %}">{{ course }}</a>
+                                            </h1>
+                                          </div>
+                                          <div class="mdl-card__supporting-text">
+                                            <p>{{ course.short_description }}</p>
+                                          </div>
+                                        </div>
+                                        {% endfor %}
                                     </div>
-                                    {% endfor %}
                             </div>
                         </div>
                     </section>

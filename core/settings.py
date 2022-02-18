@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 LOCAL_APPS = [
     'core.apps.UsersConfig',
     'core.apps.LabConfig',
+    'core.apps.ReviewsConfig',
 ]
 
 THIRD_PARTY_APPS = [

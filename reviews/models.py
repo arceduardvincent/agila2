@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from generic.models import BaseModel
 from django.utils.translation import ugettext_lazy as _
+from lab.models import Course
 
 
 RATING_CHOICES = (
@@ -14,6 +15,11 @@ RATING_CHOICES = (
 
 
 class Review(BaseModel):
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE,
+        verbose_name=_('Course')
+    )
     rating = models.CharField(
         _("Rating"),
         max_length=50,
