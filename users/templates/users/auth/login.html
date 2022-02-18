@@ -10,6 +10,7 @@
             <div class="cs-centerForm__agila"><span>AGILA</span> School of Labs</div>
             <div class="cs-centerForm__agila-desc">A Product of <img src="{% static 'img/logo-cloudswyft-vertical.png' %}" alt=""></div>
         </div>
+
         <form method="post" action="." class="cs-login-form">
             {% csrf_token %}
             <div class="mdl-textfield mdl-js-textfield  mdl-textfield--floating-label">
@@ -45,7 +46,7 @@
             </div>
         </form>
         <div class="cs-centerForm__message">
-            Do you have an account? <a href="#">Create an Account</a>
+            Do you have an account? <a href="{% url 'user-subscriber-signup' %}">Create an Account</a>
         </div>
         <div class="cs-centerForm__or">
             or
