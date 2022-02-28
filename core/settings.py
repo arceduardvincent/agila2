@@ -170,7 +170,7 @@ STATICFILES_FINDERS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = "audience:audience-dashboard"
+LOGIN_REDIRECT_URL = "audience:dashboard"
 
 try:
     from .local_settings import *
