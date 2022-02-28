@@ -54,6 +54,15 @@
                             </div>
                         </div>
                         <article class="lab__content-lessons">
+                            {{ course.overview|safe }}
+                        </article>
+                        <article class="lab__content-lessons">
+                            {{ course.objective|safe }}
+                        </article>
+                        <article class="lab__content-lessons">
+                            {{ course.prerequisites|safe }}
+                        </article>
+                        <article class="lab__content-lessons">
                             {{ course.content|safe }}
                         </article>
                     </section>

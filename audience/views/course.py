@@ -51,7 +51,7 @@ class CreateCourseView(CreateView):
 
 
 class LabTrackView(FormView):
-    template_name = 'audience/admin/lab_course_create.html'
+    template_name = 'audience/admin/lab_track_create.html'
     form_class = CreateCourseForm
     success_url = reverse_lazy('audience:audience-dashboard')
 

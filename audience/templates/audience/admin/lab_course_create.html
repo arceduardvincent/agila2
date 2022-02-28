@@ -90,7 +90,7 @@
 
                 <div class="admin-publish">
                     <a href="#" class="">Save as Draft</a>
-                    <a href="#" class="cs-button cs-button--white">Preview</a>
+                    <a href="{% if course.id %}{% url 'audience:course-content-view' course.id %}{% else %}#{% endif %}" class="cs-button cs-button--white">Preview</a>
                     <a href="#" onclick="document.getElementById('courseForm').submit()" class="cs-button cs-button--green">Publish</a>
                 </div>
 
