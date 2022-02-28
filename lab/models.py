@@ -5,6 +5,7 @@ from tinymce import models as tinymce_models
 from users.models import User
 from model_utils import Choices
 
+BEGINNER = 1  # Actual ID
 
 class Difficulty(BaseModel):
     name = models.CharField(_('Name'), max_length=32)
@@ -37,20 +38,32 @@ class Category(BaseModel):
 class Course(BaseModel):
     code = models.CharField(_('Code'), max_length=250)
     title = models.CharField(_('Title'), max_length=250)
-    short_description = models.CharField(_('Short Description'), null=True, max_length=250)
+    overview = tinymce_models.HTMLField(_('Overview'), null=True)
+    objective = tinymce_models.HTMLField(_('Objective'), null=True)
+    prerequisites = tinymce_models.HTMLField(_('Prerequisites'), null=True)
+    content = tinymce_models.HTMLField(_('Content'), null=True)
     difficulty = models.ForeignKey(
         'lab.Difficulty',
         verbose_name=_('Difficulty'),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        default=BEGINNER
+
     )
-    content = tinymce_models.HTMLField()
     instructor = models.ForeignKey(
         'users.Instructor',
         verbose_name=_('Instructor'),
         on_delete=models.CASCADE,
         null=True,
     )
+    category = models.ForeignKey(
+        'lab.Category',
+        verbose_name=_('Category'),
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
     is_active = models.BooleanField(default=True)
+    is_published = models.BooleanField(default=True)  # Flag if the course is published.
     # Lets assume on the future that we need to check the total subscriber
     # who take the course.
     progress_percentage = models.FloatField(default=0)

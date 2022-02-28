@@ -28,8 +28,8 @@ class AnonymousDashboard(DashboardView):
 
 class AdminDashboardView(DashboardView):
     # Change this to admin dashboard/homepage
-    # template_name = 'audience/admin/dashboard.html'
-    template_name = 'audience/admin/lab_course_create.html'
+    template_name = 'audience/admin/dashboard.html'
+    # template_name = 'audience/admin/lab_course_create.html'
 
 
 class StaffDashboardView(DashboardView):

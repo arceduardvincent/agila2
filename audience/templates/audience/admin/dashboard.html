@@ -1,5 +1,22 @@
-{% extends "site_base.html" %}
+{% extends "site_base_admin.html" %}
+{% load i18n %}
 
+{% block title_track %} Create a Lab Track {% endblock %}
 {% block body_base %}
-<h1>Welcome {{ request.user.profile.role.name }}</h1>
+    <div class="mdl-grid">
+        {% for course in courses %}
+        <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+          <figure class="mdl-card__media">
+          </figure>
+          <div class="mdl-card__title">
+            <h1 class="mdl-card__title-text">
+                <a href="{% url 'audience:audience-course-edit' course.id %}">{{ course }}</a>
+            </h1>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <p>{{ course.short_description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}

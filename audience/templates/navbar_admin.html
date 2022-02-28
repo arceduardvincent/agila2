@@ -3,7 +3,7 @@
         <div class="logo-layout">
 
             <div class="logo-layout__mainLogo">
-                <a href="#"><img src="{% static 'img/logo-agila.png' %}" alt=""></a>
+                <a href="{% url 'audience:dashboard' %}"><img src="{% static 'img/logo-agila.png' %}" alt=""></a>
             </div>
 
             <div class="logo-layout__siteInfo">
@@ -16,16 +16,16 @@
         <nav class="cs-admin-nav-links">
 
             <ul class="mdl-list">
-                <li class="">
+                <li class="{% if course_is_active %}cs-admin-nav-link--active {% endif %}">
                     <a href="{% url 'audience:audience-course-create' %}">
                         <span class="material-icons">menu_book</span>
                         Create a Lab Course
                     </a>
                 </li>
-                <li class="cs-admin-nav-link--active">
+                <li class="{% if lab_is_active %}cs-admin-nav-link--active {% endif %}">
                     <a href="{% url 'audience:audience-lab-track-create' %}">
                         <span class="material-icons">science</span>
-                        Create a Lab Track
+                        Create a Lab Track {{ lab_is_active }}
                     </a>
                 </li>
                 <li>

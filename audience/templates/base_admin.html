@@ -46,7 +46,7 @@
                 <div class="admin-header__left"><span class="material-icons">science</span>{% block title_track %}{% endblock %}</div>
                 <div class="admin-header__right">
                     <div class="admin-header__image">
-                        <img src="assets/img/user.jpg" alt="">
+                        <img src="{{ request.user.profile.image_url }}" alt="">
                     </div>
                     <div class="admin-header__details">
                         <div class="admin-header__details__name">{{ request.user.first_name }} {{ request.user.last_name }}</div>
@@ -56,14 +56,10 @@
             </header>
             {% block body_base %}
             {% endblock %}
-
-
         </section>
     </section>
-
       {% block scripts %}
       {% endblock %}
-
       {% block extra_body_base %}
         {% block extra_body %}
         {% endblock %}

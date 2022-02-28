@@ -77,8 +77,17 @@ class Profile(BaseModel):
     def __str__(self):
         return self.user.get_full_name()
 
-    def get_role_name(self):
-        return "{}".format(self.role.name)
+    def get_profile_image(self):
+        img = self.image
+        img_uri = None
+        if img:
+            img_uri = img.url
+        return img_uri
+
+    def image_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+        return None
 
     @cached_property
     def is_admin(self):

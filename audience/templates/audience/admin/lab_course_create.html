@@ -3,128 +3,138 @@
 
 {% block title_track %} Create a Lab Track {% endblock %}
 {% block body_base %}
-            <section class="admin-content">
-                <form class="frm-lab-course" action="">
+    <section class="admin-content">
+        <form method="post" action="."  id="courseForm" class="frm-lab-course" >
+            {% csrf_token %}
+            <div class="admin-content-left">
 
-                    <div class="admin-content-left">
+                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 
-                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                    <div class="mdl-tabs__tab-bar">
+                        <a href="#course-panel" class="mdl-tabs__tab is-active">Lab Course Information</a>
+                        <a href="#courses-panel" class="mdl-tabs__tab">Edit Course Content</a>
+                        <a href="#labprofile-panel" class="mdl-tabs__tab">Add a Lab Profile</a>
+                        <a href="#questions-panel" class="mdl-tabs__tab">Add Lab Questions</a>
+                        <a href="#grading-panel" class="mdl-tabs__tab">Configure Lab Grading</a>
+                    </div>
 
-                            <div class="mdl-tabs__tab-bar">
-                                <a href="#course-panel" class="mdl-tabs__tab is-active">Lab Course Information</a>
-                                <a href="#courses-panel" class="mdl-tabs__tab">Edit Course Content</a>
-                                <a href="#labprofile-panel" class="mdl-tabs__tab">Add a Lab Profile</a>
-                                <a href="#questions-panel" class="mdl-tabs__tab">Add Lab Questions</a>
-                                <a href="#grading-panel" class="mdl-tabs__tab">Configure Lab Grading</a>
+                    <div class="mdl-tabs__panel is-active" id="course-panel">
+
+                        <h3>Lab Course Information</h3>
+                        <h3>{{ form.errors }}</h3>
+                        <div class="cs-inputText">
+                        </div>
+                        <div class="cs-inputText">
+                            <input name="title" type="text" class="" id="title" placeholder="LAB Title" value="{{ course.title }}">
+                        </div>
+
+                        <div class="cs-inputText">
+                            <input name="code" type="text" class="" id="labcode"  pattern="[A-Z,a-z,0-9]*" placeholder="LAB Code" value="{{ course.code }}">
+                        </div>
+
+                        <div class="cs-inputText">
+                            <textarea name="overview" class="" id="overview" rows="5" placeholder="Overview">
+                                {% if course.overview %} {{ course.overview }} {% endif %}
+                            </textarea>
+                        </div>
+
+                        <div class="cs-inputText">
+                            <textarea name="objective" class="" id="objective" rows="5" placeholder="Objective">
+                                {% if course.objective %} {{ course.objective }} {% endif %}
+                            </textarea>
+                        </div>
+
+                        <div class="cs-inputText">
+                            <textarea name="prerequisites" class=""  id="prerequisites" rows="5" placeholder="Prerequisites">
+                                {% if course.prerequisites %} {{ course.prerequisites }} {% endif %}
+                            </textarea>
+                        </div>
+
+                        <!-- <div class="cs-inputText">
+                            <textarea class="" type="text" id="content" rows="15" placeholder="Course Content" value="{{ course.title }}></textarea>
+                        </div> -->
+
+                    </div>
+
+                    <div class="mdl-tabs__panel" id="courses-panel">
+
+                        <div>
+
+                            <h3>Edit Course Content</h3>
+
+                            <div class="cs-inputText">
+                                <textarea name="content"  class=""  id="content" rows="30" placeholder="Course Content">
+                                    {% if course.content %} {{ course.content }} {% endif %}
+                                </textarea>
                             </div>
 
-                            <div class="mdl-tabs__panel is-active" id="course-panel">
-
-                                <h3>Lab Course Information</h3>
-
-                                <div class="cs-inputText">
-                                    <input type="text" class="" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="LAB Title">
-                                </div>
-
-                                <div class="cs-inputText">
-                                    <input type="text" class="" id="labcode"  pattern="[A-Z,a-z,0-9]*" placeholder="LAB Code">
-                                </div>
-
-                                <div class="cs-inputText">
-                                    <textarea class="" type="text" id="content" rows="5" placeholder="Overview"></textarea>
-                                </div>
-
-                                <div class="cs-inputText">
-                                    <textarea class="" type="text" id="content" rows="5" placeholder="Objective"></textarea>
-                                </div>
-
-                                <div class="cs-inputText">
-                                    <textarea class="" type="text" id="content" rows="5" placeholder="Prerequisites"></textarea>
-                                </div>
-
-                                <!-- <div class="cs-inputText">
-                                    <textarea class="" type="text" id="content" rows="15" placeholder="Course Content"></textarea>
-                                </div> -->
-
-                            </div>
-
-                            <div class="mdl-tabs__panel" id="courses-panel">
-
-                                <div>
-
-                                    <h3>Edit Course Content</h3>
-
-                                    <div class="cs-inputText">
-                                        <textarea class="" type="text" id="content" rows="30" placeholder="Course Content"></textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="mdl-tabs__panel" id="labprofile-panel">
-                                <h3>Add Lab Profile</h3>
-                            </div>
-
-                            <div class="mdl-tabs__panel" id="questions-panel">
-                                <h3>Add Lab Questions</h3>
-                            </div>
-                            <div class="mdl-tabs__panel" id="grading-panel">
-                                <h3>Configure Lab Grading</h3>
-                            </div>
                         </div>
 
                     </div>
 
-                    <div class="admin-content-right">
-
-                        <div class="admin-publish">
-                            <a href="#" class="">Save as Draft</a>
-                            <a href="#" class="cs-button cs-button--white">Preview</a>
-                            <a href="#" class="cs-button cs-button--green">Publish</a>
-                        </div>
-
-                        <div class="admin-thumbnail">
-                            <div>Add Lab Course thumbnail</div>
-                        </div>
-
-                        <div class="accordion">
-                            <h3>Mentor</h3>
-                            <div>
-                                <div class="cs-inputText">
-                                    <input type="text" class="mdl-textfield__input" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="Ex. John Dela Cruz">
-                                </div>
-                            </div>
-                            <h3>Lab Difficulty</h3>
-                            <div>
-                                <label for="radio-1">Beginner</label>
-                                <input type="radio" name="radio-1" id="radio-1" class="course-difficulty">
-                                <label for="radio-2">Professional</label>
-                                <input type="radio" name="radio-1" id="radio-2" class="course-difficulty">
-                                <label for="radio-3">Expert</label>
-                                <input type="radio" name="radio-1" id="radio-3" class="course-difficulty">
-                            </div>
-                            <h3>Category</h3>
-                            <div>
-                                <div>
-                                    <span class="mdl-chip mdl-chip--deletable">
-                                        <span class="mdl-chip__text">AWS</span>
-                                        <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
-                                    </span>
-                                    <span class="mdl-chip mdl-chip--deletable">
-                                        <span class="mdl-chip__text">Cloud</span>
-                                        <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
-                                    </span>
-                                    <span class="mdl-chip mdl-chip--deletable">
-                                        <span class="mdl-chip__text">AI</span>
-                                        <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
-                                    </span>
-                                </div>
-                            </div>
-                          </div>
-
-
+                    <div class="mdl-tabs__panel" id="labprofile-panel">
+                        <h3>Add Lab Profile</h3>
                     </div>
-                </form>
-            </section>
+
+                    <div class="mdl-tabs__panel" id="questions-panel">
+                        <h3>Add Lab Questions</h3>
+                    </div>
+                    <div class="mdl-tabs__panel" id="grading-panel">
+                        <h3>Configure Lab Grading</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="admin-content-right">
+
+                <div class="admin-publish">
+                    <a href="#" class="">Save as Draft</a>
+                    <a href="#" class="cs-button cs-button--white">Preview</a>
+                    <a href="#" onclick="document.getElementById('courseForm').submit()" class="cs-button cs-button--green">Publish</a>
+                </div>
+
+                <div class="admin-thumbnail">
+                    <div>Add Lab Course thumbnail</div>
+                </div>
+
+                <div class="accordion">
+                    <h3>Mentor</h3>
+                    <div>
+                        <div class="cs-inputText">
+                            <input type="text" class="mdl-textfield__input" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="Ex. John Dela Cruz">
+                        </div>
+                    </div>
+                    <h3>Lab Difficulty</h3>
+                    <div>
+                        <label for="radio-1">Beginner</label>
+                        <input type="radio" name="radio-1" id="radio-1" class="course-difficulty">
+                        <label for="radio-2">Professional</label>
+                        <input type="radio" name="radio-1" id="radio-2" class="course-difficulty">
+                        <label for="radio-3">Expert</label>
+                        <input type="radio" name="radio-1" id="radio-3" class="course-difficulty">
+                    </div>
+                    <h3>Category</h3>
+                    <div>
+                        <div>
+                            <span class="mdl-chip mdl-chip--deletable">
+                                <span class="mdl-chip__text">AWS</span>
+                                <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+                            </span>
+                            <span class="mdl-chip mdl-chip--deletable">
+                                <span class="mdl-chip__text">Cloud</span>
+                                <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+                            </span>
+                            <span class="mdl-chip mdl-chip--deletable">
+                                <span class="mdl-chip__text">AI</span>
+                                <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+                            </span>
+                        </div>
+                    </div>
+                  </div>
+
+
+            </div>
+        </form>
+    </section>
 {% endblock %}
