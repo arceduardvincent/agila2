@@ -8,3 +8,4 @@ mediafiles/
 local_settings.py
 .idea
 dev.db
+server
