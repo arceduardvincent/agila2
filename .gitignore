@@ -10,3 +10,4 @@ local_settings.py
 dev.db
 server
 node_modules
+dist
