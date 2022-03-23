@@ -9,12 +9,26 @@
 4. Run `pipenv --python 3.7`
 5. Run `pipenv install`
 
-### Getting Started
-1. Run `pipenv shell`
-2. Run `python manage.py makemigrations`
-3. Run `python manage.py migrate`
-4. Run `python manage.py runserver`
 
+## Getting Started
+Make sure you are using a virtual environment of some sort (e.g. `virtualenv` or
+`pyenv`).
+Browse to http://localhost:3000/
+
+```
+npm install
+pip install -r requirements.txt
+./manage.py migrate
+./manage.py loaddata sites
+npm run dev
+```
+
+## Import fixtures order
+## Import fixtures order
+
+```
+python manage.py loaddata fixtures/roles.json
+```
 
 ### Where you can find the API docs?
     http://localhost:8000/api-docs/

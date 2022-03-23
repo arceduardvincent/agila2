@@ -1,0 +1,42 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Devops-CloudSwyft/agila"
+  },
+  "scripts": {
+    "clean": "rm -rf static/dist && mkdir -p static/dist/js && mkdir -p static/dist/css && mkdir -p static/dist/images",
+    "build:js": "browserify -t [ babelify --presets [ env ] ] -t envify -o static/dist/js/site.js static/src/js/index.js",
+    "build:css": "node-sass static/src/scss/index.scss static/dist/css/site.css",
+    "copy:images": "cp -r static/src/images/* static/dist/images/ 2>/dev/null || :",
+    "optimize:js": "uglifyjs static/dist/js/site.js -m -c warnings=false -o static/dist/js/site.js",
+    "optimize:css": "cssnano static/dist/css/site.css static/dist/css/site.css",
+    "optimize": "npm run optimize:js && npm run optimize:css",
+    "watch:test": "onchange static/src/js/**/*.js -- npm run test",
+    "watch:js": "watchify -t [ babelify --presets [ env ] ] -t envify static/src/js/index.js -o 'exorcist static/dist/js/site.js.map > static/dist/js/site.js' -dv",
+    "watch:css": "node-sass static/src/scss/index.scss static/dist/css/site.css --watch -r",
+    "build": "npm run clean && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run copy:images\" && npm run optimize",
+    "watch": "npm run clean && npm run copy:images && npm run build:css && concurrently --raw \"npm run watch:js\" \"npm run watch:css\"",
+    "dev:browser-sync": "browser-sync start --no-open --proxy localhost:8000 --files \"static/dist/js/*.js, static/dist/css/*.css\"",
+    "dev": "concurrently --raw \"./manage.py runserver\" \"npm run watch\" \"npm run dev:browser-sync\"",
+    "compile": "NODE_ENV=production npm run clean && concurrently \"npm run copy:images\" \"npm run build:js\" \"npm run build:css\""
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.27.9",
+    "browserify": "^17.0.0",
+    "concurrently": "^7.0.0",
+    "cssnano": "^5.1.5",
+    "cssnano-cli": "^1.0.5",
+    "envify": "^4.1.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "exorcist": "^2.0.0",
+    "mocha": "^9.2.2",
+    "node-sass": "^7.0.1",
+    "onchange": "^7.1.0",
+    "uglify-js": "^3.15.3",
+    "watchify": "^4.0.0"
+  }
+}

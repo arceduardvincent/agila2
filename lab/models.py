@@ -7,6 +7,7 @@ from model_utils import Choices
 
 BEGINNER = 1  # Actual ID
 
+
 class Difficulty(BaseModel):
     name = models.CharField(_('Name'), max_length=32)
     description = models.CharField(

@@ -1,0 +1,70 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AGILA - Virtual Labs Marketplace</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    {% endblock %}
+
+    {% block styles %}
+    {% endblock %}
+
+    {% block extra_head_base %}
+    {% endblock %}
+
+    {% block title %}
+      <title>Agila Market Place</title>
+    {% endblock %}
+
+</head>
+
+{% block body %}
+<body id="cs-page">
+
+    <section class="page-admin">
+        {% include 'admin/navbar.html' %}
+
+        <section class="cs-admin-panel">
+
+            <header class="admin-header">
+                <div class="admin-header__left"><span class="material-icons">science</span>{% block title_track %}{% endblock %}</div>
+                <div class="admin-header__right">
+                    <div class="admin-header__image">
+                        <img src="{{ request.user.profile.image_url }}" alt="">
+                    </div>
+                    <div class="admin-header__details">
+                        <div class="admin-header__details__name">{{ request.user.first_name }} {{ request.user.last_name }}</div>
+                        <div>{{ request.user.email }}</div>
+                    </div>
+                </div>
+            </header>
+            {% block body_base %}
+            {% endblock %}
+        </section>
+    </section>
+      {% block scripts %}
+      {% endblock %}
+      {% block extra_body_base %}
+        {% block extra_body %}
+        {% endblock %}
+      {% endblock %}
+
+    </body>
+  {% endblock %}
+</html>
