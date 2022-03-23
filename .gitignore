@@ -9,3 +9,5 @@ local_settings.py
 .idea
 dev.db
 server
+node_modules
+dist

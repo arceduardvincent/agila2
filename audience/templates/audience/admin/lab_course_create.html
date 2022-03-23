@@ -1,4 +1,4 @@
-{% extends "site_base_admin.html" %}
+{% extends "admin/site_base.html" %}
 {% load i18n %}
 
 {% block title_track %} Create a Lab Track {% endblock %}
@@ -14,7 +14,6 @@
                         <a href="#course-panel" class="mdl-tabs__tab is-active">Lab Course Information</a>
                         <a href="#courses-panel" class="mdl-tabs__tab">Edit Course Content</a>
                         <a href="#labprofile-panel" class="mdl-tabs__tab">Add a Lab Profile</a>
-                        <a href="#questions-panel" class="mdl-tabs__tab">Add Lab Questions</a>
                         <a href="#grading-panel" class="mdl-tabs__tab">Configure Lab Grading</a>
                     </div>
 
@@ -72,16 +71,172 @@
 
                     </div>
 
-                    <div class="mdl-tabs__panel" id="labprofile-panel">
-                        <h3>Add Lab Profile</h3>
+                            <div class="mdl-tabs__panel" id="labprofile-panel">
+
+                                <h3>Add a Lab Profile</h3>
+
+                                <div class="labprofile-panel__addLabProfile">
+                                    <button class="cs-button btn-addLabProfile">Create a Lab Profile</button>
+                                </div>
+
+                                <div class="modal-lab-profile">
+
+                                    <div class="lab-profile-tabs">
+
+                                        <div id="add-profile-tab-1">
+                                            <h4>Lab Details <span>(<span class="profile-tab-step">1</span>/4)</span></h4>
+                                            <div class="profile-tab--2">
+                                                <div>
+                                                    <div class="cs-inputText">
+                                                        <input type="text" placeholder="Name">
+                                                    </div>
+                                                    <div class="cs-inputText">
+                                                        <textarea name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <div class="cs-inputText">
+                                                        <input type="text" placeholder="Select Image">
+                                                        <button class="cs-button cs-selectImage">Choose</button>
+                                                    </div>
+                                                    <div class="cs-inputText">
+                                                        <textarea name="" id="" cols="30" rows="10" placeholder="Image Preview"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div id="add-profile-tab-2">
+                                            <h4>Lab Templates <span>(<span class="profile-tab-step">2</span>/4)</span></h4>
+                                            <div class="profile-tab--2">
+                                                <div class="profile-lab-templates">
+                                                    <div>Select a Lab Type: Choose an Operating System</div>
+                                                    <div class="add-profile-os">
+                                                        <div>
+                                                            <img src="assets/img/os/windows.PNG" alt="">
+                                                            <span>Microsoft Windows</span>
+                                                        </div>
+                                                        <div>
+                                                            <img src="assets/img/os/linux.PNG" alt="">
+                                                            <span>Linux</span>
+                                                        </div>
+                                                        <div>
+                                                            <img src="assets/img/os/macOS.PNG" alt="">
+                                                            <span>macOS</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="profile-lab-templates">
+                                                    <div>Select a Lab Template: Microsoft Windows</div>
+                                                    <div class="add-profile-template">
+                                                        <div class="cs-inputText cs-inputText--dialog">
+                                                            <span class="material-icons">search</span>
+                                                            <input type="text" >
+                                                        </div>
+                                                        <div class="lab-templates">
+                                                            <div class="lab-template">
+                                                                <div>MEMORY4N6</div>
+                                                                <div>Memory Forensics</div>
+                                                            </div>
+                                                            <div class="lab-template">
+                                                                <div>MEMORY4N6</div>
+                                                                <div>Memory Forensics</div>
+                                                            </div>
+                                                            <div class="lab-template">
+                                                                <div>MEMORY4N6</div>
+                                                                <div>Memory Forensics</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="add-profile-tab-3">
+                                            <h4>Lab Templates <span>(<span class="profile-tab-step">2</span>/4)</span></h4>
+                                            <div class="profile-tab--2">
+                                                <div class="profile-lab-templates">
+                                                    <div>Current Activities</div>
+                                                    <div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="profile-lab-templates">
+                                                    <div>Active Library</div>
+                                                    <div class="add-profile-template">
+                                                        <div class="cs-inputText cs-inputText--dialog">
+                                                            <span class="material-icons">search</span>
+                                                            <input type="text" >
+                                                        </div>
+                                                        <div class="lab-templates">
+                                                            <div class="lab-template lab-template--library">
+                                                                <div>A. How to Turn off Lab Machines...</div>
+                                                                <div>
+                                                                    <a href="#" class="cs-button">View</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="lab-template lab-template--library">
+                                                                <div>B. How to Turn off Lab Machines...</div>
+                                                                <div>
+                                                                    <a href="#" class="cs-button">View</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="add-profile-tab-4">
+                                            <h4>Summary <span>(<span class="profile-tab-step">4</span>/4)</span></h4>
+                                            <div class="lab-profile-summary">
+                                                <div class="lab-profile-entry">
+                                                    <div class="lab-profile-field">Name</div>
+                                                    <div>STI Lab Template</div>
+                                                </div>
+                                                <div class="lab-profile-entry">
+                                                    <div class="lab-profile-field">Description</div>
+                                                    <div>
+                                                        A template for STI Computer Engineering course.
+                                                    </div>
+                                                </div>
+                                                <div class="lab-profile-entry">
+                                                    <div class="lab-profile-field">Lab Activities</div>
+                                                    <div>
+                                                        How to Turn off Lab machines when not being used
+                                                    </div>
+                                                </div>
+                                                <div class="lab-profile-entry">
+                                                    <div class="lab-profile-field">Operating System</div>
+                                                    <div>Microsoft Windows</div>
+                                                </div>
+                                                <div class="lab-profile-entry">
+                                                    <div class="lab-profile-field">Lab Template</div>
+                                                    <div>WINMALWARE</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="lab-profile-control">
+                                        <input type="button" class="cs-button cs-button--white" id="btnPrevious" value="Previous">
+                                        <input type="button" class="cs-button" id="btnNext" value="Next">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                    <div class="mdl-tabs__panel" id="grading-panel">
+                        <div>
+                            <h3>Grading System</h3>
+                        </div>
                     </div>
 
-                    <div class="mdl-tabs__panel" id="questions-panel">
-                        <h3>Add Lab Questions</h3>
-                    </div>
-                    <div class="mdl-tabs__panel" id="grading-panel">
-                        <h3>Configure Lab Grading</h3>
-                    </div>
+
+
                 </div>
 
             </div>
