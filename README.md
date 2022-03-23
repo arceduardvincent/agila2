@@ -1,8 +1,8 @@
-### Deployment
+## Deployment
 1. Docker setup.
 2. Heroku setup.
 
-### Installation
+## Installation
 1. Install [pipenv](https://pypi.org/project/pipenv/)
 2. Clone this repo and `cd agila`
 3. Run `pip install --user --upgrade pipenv` to get the latest pipenv version.
@@ -23,7 +23,6 @@ pip install -r requirements.txt
 npm run dev
 ```
 
-## Import fixtures order
 ## Import fixtures order
 
 ```
