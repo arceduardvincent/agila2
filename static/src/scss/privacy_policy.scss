@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+.privacy_policy--bg {
+    background: url("../images/cover-privacy.png") no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+
+    h1 {
+        text-align: center;
+        padding: 4rem;
+        color: #00008B;
+    }
+
+}
+
+.privacy_policy {
+    padding: 5rem;
+    padding-top: 2rem;
+}
+
+
+%paragraph {
+    padding: 1rem;
+    padding-top: 0;
+}
+
+%term {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.introduction {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.definitions {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.information_collection_use {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.types_of_data_collected {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.use_of_data {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.retention_of_data {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.transfer_of_data {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.disclosure_of_data {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.security_of_data {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.data_protection_rigths {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.service_providers {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.analytics {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.ci_cd_tools {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.behavioral_remarketing {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.payments {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.links_to_other_sites {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.childrens_privacy {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.changes_to_this {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
+
+.contact_us {
+    .term {
+        @extend %term;
+    }
+
+    p {
+        @extend %paragraph;
+    }
+}
