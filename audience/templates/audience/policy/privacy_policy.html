@@ -1,4 +1,7 @@
+{% extends "site_base.html" %}
 {% load static %}
+{% load i18n %}
+{% block body_base %}
 <link rel="stylesheet" type="text/css" href="{% static 'src/scss/privacy_policy.scss' %}">
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -402,3 +405,4 @@
         </div>
     </div>
 </div>
+{% endblock %}
