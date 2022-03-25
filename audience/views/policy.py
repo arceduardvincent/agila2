@@ -1,4 +1,8 @@
 from django.views.generic import TemplateView
+from django.urls import reverse
 
-class PrivacyView(TemplateView):
-    template_name = 'audience/anonymous/dashboard.html'
+class PrivacyPolicyView(TemplateView):
+    template_name = 'audience/policy/privacy_policy.html'
+    
+class TermsUseView(TemplateView):
+    template_name = 'audience/policy/terms_use.html'

@@ -7,7 +7,10 @@ app_name = "audience"
 urlpatterns = [
     # COMMON PAGES
     url(r'^$', dashboard_view, name='dashboard'),
-    path('privacy', PrivacyView.as_view(), name='privacy'),
+    path('privacy_policy', PrivacyPolicyView.as_view(), 
+        name='privacy_policy'),
+    path('terms_use', PrivacyPolicyView.as_view(), 
+        name='terms_use'),
     url(r'^course/detail/(?P<pk>\d+)/$', CourseContentView.as_view(),
         name='course-content-view'),
     url(r'^lab/course/create/$', login_required(CreateCourseView.as_view()),

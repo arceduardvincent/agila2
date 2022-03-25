@@ -4,5 +4,5 @@ from .course import (
 )
 
 from .policy import(
-    PrivacyView
+    PrivacyPolicyView, TermsUseView
 )
