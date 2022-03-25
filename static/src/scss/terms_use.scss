@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.terms_services--bg {
+  background: url("/cover-terms.png") no-repeat;
+  background-size: cover;
+  background-size: 100% 100%;
+
+  h1 {
+    text-align: center;
+    padding: 4rem;
+    color: #00008B;
+  }
+
+}
+
+.terms_services {
+  padding: 5rem;
+}
+
+%paragraph {
+  padding: 1rem;
+  padding-top: 0;
+}
+
+%term {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.introduction {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.communications {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.purchases {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.contests_sweepstakes_and_promotions {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.subscriptions {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.free_trial {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.free_changes {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.refunds {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.content {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.porhibited_uses {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.analytics {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.accounts {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.intellectual_property {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.error_reporting_and_feedback {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.links {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.disclaimer_of_warranty {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.limitation_of_liability {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.termination {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.governing_law {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.changes_to_service {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.amendments_to_terms {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.waiver_and_severability {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.acknowledgement {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
+
+.contact_us {
+  .term {
+    @extend %term;
+  }
+
+  p {
+    @extend %paragraph;
+  }
+}
