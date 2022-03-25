@@ -31,6 +31,7 @@ admin.site.site_title = "Agila Marketplace"
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^auth/', include('users.urls')),
+    path('api/users/', include('api.v1.users.urls')),
     path('upload_image/', views.upload_image),
     path('tinymce/', include('tinymce.urls')),
     path('', include('audience.urls')),

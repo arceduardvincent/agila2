@@ -91,16 +91,18 @@
                                                         <input type="text" placeholder="Name">
                                                     </div>
                                                     <div class="cs-inputText">
-                                                        <textarea name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                                                        <textarea name="" cols="30" rows="10" placeholder="Description"></textarea>
                                                     </div>
 
                                                 </div>
                                                 <div>
                                                     <div class="cs-inputText">
-                                                        <input type="text" placeholder="Select Image">
+<!--                                                        <input type='file' id="imgInp" />-->
+                                                        <input type="text" id="imgInp" placeholder="Select Image">
                                                         <button class="cs-button cs-selectImage">Choose</button>
                                                     </div>
                                                     <div class="cs-inputText">
+<!--                                                        <img id="labPreview" src="#" alt="Image Preview" />-->
                                                         <textarea name="" id="" cols="30" rows="10" placeholder="Image Preview"></textarea>
                                                     </div>
                                                 </div>
@@ -229,14 +231,248 @@
 
                             </div>
 
-                    <div class="mdl-tabs__panel" id="grading-panel">
-                        <div>
-                            <h3>Grading System</h3>
-                        </div>
-                    </div>
+                            <div class="mdl-tabs__panel" id="grading-panel">
 
+                                <div>
+                                    <h3>Grading System</h3>
+                                </div>
 
+                                <div class="grading-instructions">
 
+                                    <p>
+                                        <b>Note:</b> Kindly define the preferred weighted scoring by providing the weight of the exam and hands-on practicum grades.
+                                    </p>
+<!--
+                                    <p>
+                                        The default weighted scores are set to <b>50%</b> for exam questions and <b>50%</b> hands-on practicum grades.
+                                    </p> -->
+
+                                    <p class="grading-form">
+                                        <span><b>Scoring Weight - </b></span>
+                                        <span>Exam Questions: <input type="text" class="input-scoreweight" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="50" value="50"> %</span>
+                                        <span>Hands-on Practicum: <input type="text" class="input-scoreweight" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="50" value="50"> %</span>
+                                    </p>
+
+                                </div>
+
+                                <div>
+                                    <div>
+
+                                        <div id="tabs">
+
+                                            <ul>
+                                              <li><a href="#tabs-1">Exam Questions</a></li>
+                                              <li><a href="#tabs-2">Hands-on Practicum</a></li>
+                                            </ul>
+
+                                            <div id="tabs-1">
+
+                                                <div class="courses-panel__header--2">
+                                                    <h4>Exam Questions</h4>
+                                                    <div>
+                                                        <button class="cs-button btn-addCourses">Add a Question</button>
+                                                    </div>
+                                                </div>
+
+                                                <ul id="sortable" class="courses-panel__courses mdl-list">
+
+                                                    <li class="sort-box ui-state-default">
+
+                                                        <div class="sort-box-dragIcon"><span class="material-icons">more_vert</span></div>
+
+                                                        <div class="sort-box-details">
+
+                                                            <div>
+
+                                                                <div class="cs-inputText">
+                                                                    <textarea class="" type="text" id="content" rows="3" placeholder="Question #1">What is an Azure pipeline?</textarea>
+                                                                </div>
+
+                                                                <div>
+                                                                    Select the correct answer among the options
+                                                                </div>
+
+                                                                <div class="cs-choices">
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="sort-box-actions">
+                                                            <span class="material-icons">delete</span>
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li class="sort-box ui-state-default">
+
+                                                        <div class="sort-box-dragIcon"><span class="material-icons">more_vert</span></div>
+
+                                                        <div class="sort-box-details">
+
+                                                            <div>
+
+                                                                <div class="cs-inputText">
+                                                                    <textarea class="" type="text" id="content" rows="3" placeholder="Question #1">What is an Azure pipeline?</textarea>
+                                                                </div>
+
+                                                                <div>
+                                                                    Select the correct answer among the options
+                                                                </div>
+
+                                                                <div class="cs-choices">
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="sort-box-actions">
+                                                            <span class="material-icons">delete</span>
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li class="sort-box ui-state-default">
+
+                                                        <div class="sort-box-dragIcon"><span class="material-icons">more_vert</span></div>
+
+                                                        <div class="sort-box-details">
+
+                                                            <div>
+
+                                                                <div class="cs-inputText">
+                                                                    <textarea class="" type="text" id="content" rows="3" placeholder="Question #1">What is an Azure pipeline?</textarea>
+                                                                </div>
+
+                                                                <div>
+                                                                    Select the correct answer among the options
+                                                                </div>
+
+                                                                <div class="cs-choices">
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                    <label class="cs-choice">
+                                                                        <div class="cs-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="cs-checkmark"></span>
+                                                                        </div>
+                                                                        <input type="text" placeholder="Option">
+                                                                    </label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="sort-box-actions">
+                                                            <span class="material-icons">delete</span>
+                                                        </div>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+                                            <div id="tabs-2">
+
+                                                <h4>Hands-on Practicum Criteria</h4>
+
+                                                <div class="cs-inputText">
+                                                    <textarea class="" type="text" id="content" rows="20" placeholder="Practicum Grading Criteria"></textarea>
+                                                </div>
+
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                </div>
+                            </div>
                 </div>
 
             </div>
