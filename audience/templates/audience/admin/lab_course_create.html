@@ -1,5 +1,6 @@
-{% extends "admin/site_base.html" %}
+{% extends "audience/admin/theme/site_base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block title_track %} Create a Lab Track {% endblock %}
 {% block body_base %}
@@ -32,29 +33,9 @@
                         </div>
 
                         <div class="cs-inputText">
-                            <textarea name="overview" class="" id="overview" rows="5" placeholder="Overview">
-                                {% if course.overview %} {{ course.overview }} {% endif %}
-                            </textarea>
+                            <textarea name="overview" class="not-here" id="overview" rows="5" placeholder="Overview">{% if course.overview %} {{ course.overview }} {% endif %}</textarea>
                         </div>
-
-                        <div class="cs-inputText">
-                            <textarea name="objective" class="" id="objective" rows="5" placeholder="Objective">
-                                {% if course.objective %} {{ course.objective }} {% endif %}
-                            </textarea>
-                        </div>
-
-                        <div class="cs-inputText">
-                            <textarea name="prerequisites" class=""  id="prerequisites" rows="5" placeholder="Prerequisites">
-                                {% if course.prerequisites %} {{ course.prerequisites }} {% endif %}
-                            </textarea>
-                        </div>
-
-                        <!-- <div class="cs-inputText">
-                            <textarea class="" type="text" id="content" rows="15" placeholder="Course Content" value="{{ course.title }}></textarea>
-                        </div> -->
-
                     </div>
-
                     <div class="mdl-tabs__panel" id="courses-panel">
 
                         <div>
@@ -91,7 +72,7 @@
                                                         <input type="text" placeholder="Name">
                                                     </div>
                                                     <div class="cs-inputText">
-                                                        <textarea name="" cols="30" rows="10" placeholder="Description"></textarea>
+                                                        <textarea name="" cols="30" rows="10" class="not-here" placeholder="Description"></textarea>
                                                     </div>
 
                                                 </div>
@@ -103,7 +84,7 @@
                                                     </div>
                                                     <div class="cs-inputText">
 <!--                                                        <img id="labPreview" src="#" alt="Image Preview" />-->
-                                                        <textarea name="" id="" cols="30" rows="10" placeholder="Image Preview"></textarea>
+                                                        <textarea name="" class="not-here" id="" cols="30" rows="10" placeholder="Image Preview"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -117,15 +98,15 @@
                                                     <div>Select a Lab Type: Choose an Operating System</div>
                                                     <div class="add-profile-os">
                                                         <div>
-                                                            <img src="assets/img/os/windows.PNG" alt="">
+                                                            <img src="{% static 'images/os/windows.PNG' %}" alt="">
                                                             <span>Microsoft Windows</span>
                                                         </div>
                                                         <div>
-                                                            <img src="assets/img/os/linux.PNG" alt="">
+                                                            <img src="{% static 'images/os/linux.PNG' %}" alt="">
                                                             <span>Linux</span>
                                                         </div>
                                                         <div>
-                                                            <img src="assets/img/os/macOS.PNG" alt="">
+                                                            <img src="{% static 'images/os/macOS.PNG' %}" alt="">
                                                             <span>macOS</span>
                                                         </div>
                                                     </div>

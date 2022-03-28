@@ -13,6 +13,4 @@ class CreateCourseForm(forms.ModelForm):
 
     class Meta:
         model = Course
-        fields = ('code', 'title', 'content',
-                  'overview', 'objective', 'prerequisites',
-                  )
+        fields = ('code', 'title',  'overview', 'content')

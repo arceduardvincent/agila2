@@ -44,7 +44,7 @@ class LessonInline(admin.StackedInline):
 
 @admin.register(models.Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'instructor', 'difficulty',  'is_active',
+    list_display = ('id', 'title', 'instructor', 'category', 'difficulty',  'is_active',
                     'created', 'modified',)
     search_fields = ('title',)
     inlines = (LessonInline,)

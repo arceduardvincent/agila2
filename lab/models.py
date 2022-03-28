@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from tinymce import models as tinymce_models
 from users.models import User
 from model_utils import Choices
+from generic.constants import image_file_path
 
 BEGINNER = 1  # Actual ID
 
@@ -38,6 +39,12 @@ class Category(BaseModel):
 
 class Course(BaseModel):
     code = models.CharField(_('Code'), max_length=250)
+    banner = models.ImageField(
+        _('Course Banner'),
+        upload_to=image_file_path,
+        blank=True,
+        null=True
+    )
     title = models.CharField(_('Title'), max_length=250)
     overview = tinymce_models.HTMLField(_('Overview'), null=True)
     objective = tinymce_models.HTMLField(_('Objective'), null=True)
@@ -79,6 +86,47 @@ class Course(BaseModel):
     def get_lessons(self):
         lessons = Lesson.objects.filter(course=self)
         return lessons
+
+
+class OperatingSystem(BaseModel):
+    image = models.ImageField(
+        _('Image'),
+        upload_to=image_file_path,
+        blank=True,
+        null=True
+    )
+    name = models.CharField(max_length=255,  null=True)
+    is_active = models.BooleanField(default=True)
+
+
+class OSTemplate(BaseModel):
+    image = models.ImageField(
+        _('Image'),
+        upload_to=image_file_path,
+        blank=True,
+        null=True
+    )
+    name = models.CharField(max_length=255,  null=True)
+    is_active = models.BooleanField(default=True)
+
+
+class LabProfile(BaseModel):
+    course = models.ForeignKey(
+        Course, null=True, related_name="course_lab_profile",
+        on_delete=models.CASCADE,
+    )
+    image = models.ImageField(
+        _('Image'),
+        upload_to=image_file_path,
+        blank=True,
+        null=True
+    )
+    title = models.CharField(max_length=255,  null=True)
+    description = models.TextField()
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
 
 
 class Lesson(BaseModel):

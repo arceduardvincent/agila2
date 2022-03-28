@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http.response import Http404
 from django.urls import reverse_lazy
-from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 from django.views.generic import (
     ListView,
     FormView,
@@ -19,6 +19,12 @@ from audience.forms import CreateCourseForm
 from lab.models import (
     Course
 )
+from reviews.models import (
+    Review
+)
+from users.models import (
+    Subscriber
+)
 
 
 class CourseContentView(DetailView):
@@ -27,7 +33,14 @@ class CourseContentView(DetailView):
     def get(self, request, *args, **kwargs):
         pk = self.kwargs['pk']
         course = Course.objects.get(pk=pk)
-        context = {'course': course}
+        related_courses = Course.objects.filter(
+            category=course.category).exclude(id=pk)[:3]
+        reviews = Review.objects.filter(course=course)
+        context = {
+            'related_courses': related_courses,
+            'course': course,
+            'reviews': reviews
+        }
         return render(request, self.template_name, context)
 
 
@@ -72,6 +85,7 @@ class ModifyCourseView(UpdateView):
 
     def get_object(self, queryset=None):
         course_id = self.kwargs['pk']
+        self.request.session['course_id'] = course_id
         if queryset is None:
             queryset = self.get_queryset()
 
@@ -101,8 +115,21 @@ class ModifyCourseView(UpdateView):
         course.code = form.cleaned_data['code']
         course.title = form.cleaned_data['title']
         course.overview = form.cleaned_data['overview']
-        course.objective = form.cleaned_data['objective']
-        course.prerequisites = form.cleaned_data['prerequisites']
         course.content = form.cleaned_data['content']
         course.save()
         return HttpResponseRedirect(self.get_success_url())
+
+
+class SubscriberGradeBookList(DetailView):
+    template_name = 'audience/admin/lab-gradebook.html'
+
+    def get(self, request, *args, **kwargs):
+        course_id = self.request.session.get('course_id', None)
+        course = get_object_or_404(Course, pk=course_id)
+        subscribers = Subscriber.objects.filter(
+            course=course)
+        context = {
+            'subscribers': subscribers,
+            'course': course
+        }
+        return render(request, self.template_name, context)

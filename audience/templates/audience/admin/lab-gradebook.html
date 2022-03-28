@@ -1,0 +1,50 @@
+{% extends "audience/admin/theme/site_base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title_track %} Create a Lab Track {% endblock %}
+{% block body_base %}
+    <section class="admin-content">
+        <div class="cs-gradebook">
+            <div class="cs-gradebook-details">
+                <div>
+                    <h3>{{ course.title }}</h3>
+                </div>
+                <div>
+                    <a href="" class="cs-button">Edit Course</a>
+                </div>
+            </div>
+
+            <div class="cs-gradebook-mentor">Course Creator: {{ course.instructor }}</div>
+
+            <table class="cs-tbl cs-tbl--gradebook">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Overall Grade</td>
+                        <td>Exam Questions</td>
+                        <td>Hands-on Practicum</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for subscriber in subscribers %}
+                        <tr>
+                            <td>
+                                <img src="assets/img/users/michael.PNG" alt="">
+                                {{ subscriber.user.get_full_name }}
+                            </td>
+                            <td>0%</td>
+                            <td>0%</td>
+                            <td>0%</td>
+                            <td>
+                                <span class="material-icons">edit</span>
+                                <span class="material-icons">delete</span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

@@ -119,6 +119,12 @@ class Subscriber(BaseModel):
         on_delete=models.CASCADE,
         verbose_name=_('User')
     )
+    course = models.ForeignKey(
+        'lab.Course',
+        on_delete=models.CASCADE,
+        verbose_name=_('Course'),
+        related_name="subscriber_course",
+    )
 
     def __str__(self):
         return self.user.get_full_name()

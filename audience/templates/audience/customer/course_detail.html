@@ -1,4 +1,5 @@
 {% extends "site_base.html" %}
+{% load static %}
 
 {% block body_base %}
         <main class="page-container">
@@ -6,7 +7,12 @@
                 <section class="page-content-lab mdl-grid">
                     <section class="page-content-lab__content mdl-cell mdl-cell--9-col">
                         <div class="lab__content__image">
-                            <img src="assets/img/feat-headerImage.jpg" alt="">
+                            {% if course.banner %}
+                                <img src="{{ course.banner.url }}" alt="">
+                            {% else %}
+                                <img src="{% static 'images/feat-headerImage.jpg' %}" alt="">
+                            {% endif %}
+
                             <div class="lab_content__image__info">
                                 <div class="lab_content__image__info__meta">
                                     <span>
@@ -20,17 +26,17 @@
                                 </div>
                                 <div class="lab_content__image__info__title">{{ course.title }}</div>
                                 <p class="lab_content__image__info__description">
-                                    {{ course.short_description }}
+                                    {{ course.overview }}
                                 </p>
                                 <div class="lab_content__image__info__reviews">
                                     <span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
                                         <span class="material-icons material-icons-star">star_rate</span>
                                     </span>
-                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                    <span class="lab_content__image__info__reviews__count">(0 Reviews)</span>
                                 </div>
                                 <div class="lab_content__image__info__addToCart">
                                     <a href="#" class="cs-button">
@@ -39,16 +45,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>7
-                        <article class="lab__content-lessons">
-                            {{ course.overview|safe }}
-                        </article>
-                        <article class="lab__content-lessons">
-                            {{ course.objective|safe }}
-                        </article>
-                        <article class="lab__content-lessons">
-                            {{ course.prerequisites|safe }}
-                        </article>
+                        </div>
                         <article class="lab__content-lessons">
                             {{ course.content|safe }}
                         </article>
@@ -60,16 +57,123 @@
                             {% for lesson in course.get_lessons %}
                                 <li>{{ lesson.title }}</li>
                             {% endfor %}
-<!--                            <li>Configuring your Azure Pipelines project</li>-->
-<!--                            <li>Modifying a YAML build pipeline definition</li>-->
-<!--                            <li>Proposing a change via GitHub</li>-->
-<!--                            <li>Lab Quiz</li>-->
                         </ol>
                     </nav>
 
                 </section>
+                <section class="page-content__reviews">
+                    <div class=""><h3>Reviews</h3></div>
+                    <div class="reviews">
+                        <div class="reviews-overall">
+                            <div class="reviews-overall__stats">
+                                <span>0</span>
+                                <span>out of 5</span>
+                            </div>
+                            <div class="reviews-overall__ratings">
+                                <div class="reviews-overall__ratings__row">
+                                    <span>5</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar5" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>4</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar4" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>3</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar3" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>2</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar2" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                                <div class="reviews-overall__ratings__row">
+                                    <span>1</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span id="progressbar1" class="mdl-progress mdl-js-progress"></span>
+                                </div>
+                            </div>
 
+                            <div class="reviews-overall__total">(0 reviews)</div>
+                            <a href="#" class="cs-button">Write a Review</a>
+
+                        </div>
+
+                        <div class="reviews-list">
+                                <div class="review-card">
+                                    <div class="review-card__user">
+                                        <span>Jan Doe</span>
+                                        <span>
+                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="review-card__text">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                    </div>
+
+                                    <div class="review-card__date">
+                                        May 2, 2022
+                                    </div>
+
+                                </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page-content-recommendations">
+                    <h3>Recommended Labs</h3>
+                    <div class="course-cards mdl-grid">
+                        {% for re_course in related_courses%}
+                            <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+                                <div class="course-card__top">
+                                    {% if re_course.banner %}
+                                        <img src="{{ re_course.banner.url }}" alt="">
+                                    {% else %}
+                                        <img src="{% static 'images/feat-headerImage.jpg' %}" alt="">
+                                    {% endif %}
+                                    <div class="course-card__top__foreground">
+                                        <div class="course-card__label">
+                                            <div>
+                                                <span></span>Lab Track
+                                            </div>
+                                        </div>
+                                        <div class="course-card__title">
+                                            <a href="#">{{ re_course.title }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card__bottom">
+                                    <div class="lab_content__image__info__reviews">
+                                        <span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                        </span>
+                                        <span class="lab_content__image__info__reviews__count">(0 Reviews)</span>
+                                    </div>
+                                    <div class="course-card__description">
+                                        {{ re_course.overview|safe }}
+                                    </div>
+                                    <a href="#" class="cs-button">
+                                        <span class="material-icons">add_shopping_cart</span>
+                                            Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </section>
             </div>
-
         </main>
 {% endblock %}

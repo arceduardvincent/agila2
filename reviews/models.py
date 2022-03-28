@@ -29,6 +29,7 @@ class Review(BaseModel):
         on_delete=models.CASCADE,
         verbose_name=_('User')
     )
+    comment = models.CharField(_('Comment'), null=True, max_length=250)
 
     class Meta:
         verbose_name_plural = "Reviews"

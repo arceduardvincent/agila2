@@ -1,5 +1,5 @@
 tinymce.init({
-    selector: 'textarea',  // change this value according to your HTML
+    selector: 'textarea:not(.not-here)',  // change this value according to your HTML
     images_upload_url: '/upload_image/', // Image upload address in Django route
     height: 500,
   plugins: [

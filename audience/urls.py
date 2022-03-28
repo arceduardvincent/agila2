@@ -14,4 +14,6 @@ urlpatterns = [
         name='audience-course-edit'),
     url(r'^lab/track/create/$', login_required(LabTrackView.as_view()),
         name='audience-lab-track-create'),
+    url(r'^course/gradebook/$', login_required(
+        SubscriberGradeBookList.as_view()), name='course-gradebook-view'),
 ]
