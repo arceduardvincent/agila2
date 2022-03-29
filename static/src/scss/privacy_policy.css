@@ -1,0 +1,34 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.privacy_policy--bg {
+  background: url("../images/cover-privacy.png") no-repeat;
+  background-size: cover;
+  background-size: 100% 100%;
+}
+
+.privacy_policy--bg h1 {
+  text-align: center;
+  padding: 4rem;
+  color: #00008B;
+}
+
+.privacy_policy {
+  padding: 5rem;
+  padding-top: 2rem;
+}
+
+.introduction p, .definitions p, .information_collection_use p, .types_of_data_collected p, .use_of_data p, .retention_of_data p, .transfer_of_data p, .disclosure_of_data p, .security_of_data p, .data_protection_rigths p, .service_providers p, .analytics p, .ci_cd_tools p, .behavioral_remarketing p, .payments p, .links_to_other_sites p, .childrens_privacy p, .changes_to_this p, .contact_us p {
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.introduction .term, .definitions .term, .information_collection_use .term, .types_of_data_collected .term, .use_of_data .term, .retention_of_data .term, .transfer_of_data .term, .disclosure_of_data .term, .security_of_data .term, .data_protection_rigths .term, .service_providers .term, .analytics .term, .ci_cd_tools .term, .behavioral_remarketing .term, .payments .term, .links_to_other_sites .term, .childrens_privacy .term, .changes_to_this .term, .contact_us .term {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+/*# sourceMappingURL=privacy_policy.css.map */
