@@ -12,10 +12,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -39,19 +37,24 @@
 
     <section class="page-admin">
         {% include 'audience/admin/theme/navbar.html' %}
-
         <section class="cs-admin-panel">
-
             <header class="admin-header">
                 <div class="admin-header__left"><span class="material-icons">science</span>{% block title_track %}{% endblock %}</div>
                 <div class="admin-header__right">
                     <div class="admin-header__image">
                         <img src="{{ request.user.profile.image_url }}" alt="">
                     </div>
-                    <div class="admin-header__details">
+                    <div id="profileDropdown" class="admin-header__details">
                         <div class="admin-header__details__name">{{ request.user.first_name }} {{ request.user.last_name }}</div>
                         <div>{{ request.user.email }}</div>
                     </div>
+                    <ul for="profileDropdown" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                        <li class="mdl-menu__item">
+                            <a href="#">Profile</a></li>
+                        <li class="mdl-menu__item">
+                            <a href="{% url 'users-logout' %}">Logout</a>
+                        </li>
+                    </ul>
                 </div>
             </header>
             {% block body_base %}

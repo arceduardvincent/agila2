@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 
 class UserCheckMixin(object):
     user_check_failure_path = reverse_lazy('audience-dashboard')
-    user_check_store_id = None
+    user_check_organizatin_id = None
 
     def check_user(self, user):
         user_role_checked = self.check_user_role(user)

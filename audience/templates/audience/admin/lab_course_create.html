@@ -19,7 +19,6 @@
                     </div>
 
                     <div class="mdl-tabs__panel is-active" id="course-panel">
-
                         <h3>Lab Course Information</h3>
                         <h3>{{ form.errors }}</h3>
                         <div class="cs-inputText">
@@ -27,43 +26,30 @@
                         <div class="cs-inputText">
                             <input name="title" type="text" class="" id="title" placeholder="LAB Title" value="{{ course.title }}">
                         </div>
-
                         <div class="cs-inputText">
                             <input name="code" type="text" class="" id="labcode"  pattern="[A-Z,a-z,0-9]*" placeholder="LAB Code" value="{{ course.code }}">
                         </div>
-
                         <div class="cs-inputText">
                             <textarea name="overview" class="not-here" id="overview" rows="5" placeholder="Overview">{% if course.overview %} {{ course.overview }} {% endif %}</textarea>
                         </div>
                     </div>
                     <div class="mdl-tabs__panel" id="courses-panel">
-
                         <div>
-
                             <h3>Edit Course Content</h3>
-
                             <div class="cs-inputText">
                                 <textarea name="content"  class=""  id="content" rows="30" placeholder="Course Content">
                                     {% if course.content %} {{ course.content }} {% endif %}
                                 </textarea>
                             </div>
-
                         </div>
-
                     </div>
-
                             <div class="mdl-tabs__panel" id="labprofile-panel">
-
                                 <h3>Add a Lab Profile</h3>
-
                                 <div class="labprofile-panel__addLabProfile">
                                     <button class="cs-button btn-addLabProfile">Create a Lab Profile</button>
                                 </div>
-
                                 <div class="modal-lab-profile">
-
                                     <div class="lab-profile-tabs">
-
                                         <div id="add-profile-tab-1">
                                             <h4>Lab Details <span>(<span class="profile-tab-step">1</span>/4)</span></h4>
                                             <div class="profile-tab--2">
@@ -74,23 +60,19 @@
                                                     <div class="cs-inputText">
                                                         <textarea name="" cols="30" rows="10" class="not-here" placeholder="Description"></textarea>
                                                     </div>
-
                                                 </div>
                                                 <div>
                                                     <div class="cs-inputText">
 <!--                                                        <input type='file' id="imgInp" />-->
-                                                        <input type="text" id="imgInp" placeholder="Select Image">
+                                                        <input type="file" id="imgInp" placeholder="Select Image">
                                                         <button class="cs-button cs-selectImage">Choose</button>
                                                     </div>
                                                     <div class="cs-inputText">
-<!--                                                        <img id="labPreview" src="#" alt="Image Preview" />-->
-                                                        <textarea name="" class="not-here" id="" cols="30" rows="10" placeholder="Image Preview"></textarea>
+                                                        <img id="labPreview" src="#" alt="Image Preview" />
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                         <div id="add-profile-tab-2">
                                             <h4>Lab Templates <span>(<span class="profile-tab-step">2</span>/4)</span></h4>
                                             <div class="profile-tab--2">
