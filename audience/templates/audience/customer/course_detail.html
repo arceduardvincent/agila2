@@ -66,7 +66,7 @@
                     <div class="reviews">
                         <div class="reviews-overall">
                             <div class="reviews-overall__stats">
-                                <span>0</span>
+                                <span>{{ reviews.count }}</span>
                                 <span>out of 5</span>
                             </div>
                             <div class="reviews-overall__ratings">
@@ -97,20 +97,21 @@
                                 </div>
                             </div>
 
-                            <div class="reviews-overall__total">(0 reviews)</div>
-                            <a href="#" class="cs-button">Write a Review</a>
+                            <div class="reviews-overall__total">({{ reviews.count }} reviews)</div>
+                            <a href="#" id="review-dialog" class="cs-button">Write a Review</a>
 
                         </div>
 
                         <div class="reviews-list">
+                            {% for review in reviews %}
                                 <div class="review-card">
                                     <div class="review-card__user">
-                                        <span>Jan Doe</span>
+                                        <span>{{ review.user }}</span>
                                         <span>
-                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                            <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
+                                            <span class="material-icons material-icons-star">star_rate</span>
                                             <span class="material-icons material-icons-star">star_rate</span>
                                         </span>
                                     </div>
@@ -120,10 +121,11 @@
                                     </div>
 
                                     <div class="review-card__date">
-                                        May 2, 2022
+                                        {{ review.created }}
                                     </div>
 
                                 </div>
+                            {% endfor %}
 
                         </div>
                     </div>

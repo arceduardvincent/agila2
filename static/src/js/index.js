@@ -1,4 +1,3 @@
-import './lab_profile.js';
 
 (function ($) {
 
