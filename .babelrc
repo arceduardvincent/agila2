@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "css-modules-transform",
+    [
+      "file-loader",
+      {
+        "name": "[name].[ext]",
+        "extensions": ["png", "jpg", "jpeg", "gif", "svg", "PNG"],
+        "publicPath": "/site_media/static/images",
+        "outputPath": "/site_media/static/images",
+        "context": "",
+        "limit": 0
+      }
+    ],
+
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]],
+  "env": {
+    "development": {
+      "presets": [["@babel/preset-react", { "development": true }]]
+    }
+  }
+}

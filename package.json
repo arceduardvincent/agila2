@@ -8,7 +8,7 @@
     "build:js": "browserify -t [ babelify --presets [ env ] ] -t envify -o static/dist/js/site.js static/src/js/index.js",
     "build:css": "node-sass static/src/scss/index.scss static/dist/css/site.css",
     "copy:images": "cp -r static/src/images/* static/dist/images/ 2>/dev/null || :",
-    "optimize:js": "uglifyjs static/dist/js/site.js -m -c warnings=false -o static/dist/js/site.js",
+    "optimize:js": "browserify -t [ babelify --presets [ env ] ] -t envify -o static/dist/js/site.js static/src/js/index.js",
     "optimize:css": "cssnano static/dist/css/site.css static/dist/css/site.css",
     "optimize": "npm run optimize:js && npm run optimize:css",
     "watch:test": "onchange static/src/js/**/*.js -- npm run test",
@@ -23,6 +23,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "babel-core": "^6.26.3",
+    "babel-plugin-css-modules-transform": "^1.6.2",
+    "babel-plugin-file-loader": "^2.0.0",
     "babel-preset-env": "^1.7.0",
     "babelify": "^10.0.0",
     "browser-sync": "^2.27.9",
@@ -38,5 +40,13 @@
     "onchange": "^7.1.0",
     "uglify-js": "^3.15.3",
     "watchify": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
