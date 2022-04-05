@@ -46,9 +46,7 @@ class Course(BaseModel):
         null=True
     )
     title = models.CharField(_('Title'), max_length=250)
-    overview = tinymce_models.HTMLField(_('Overview'), null=True)
-    objective = tinymce_models.HTMLField(_('Objective'), null=True)
-    prerequisites = tinymce_models.HTMLField(_('Prerequisites'), null=True)
+    overview = models.CharField(_('Overview'), max_length=250)
     content = tinymce_models.HTMLField(_('Content'), null=True)
     difficulty = models.ForeignKey(
         'lab.Difficulty',
