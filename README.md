@@ -12,7 +12,7 @@
 
 ## Installation
 1. Clone this repo and `cd agila`
-2. Run `./setup.sh` to get the latest pipenv version.
+2. Run `./bin/setup.sh` to get the latest pipenv version.
 3. Run `source /usr/local/bin/virtualenvwrapper.sh`
 4. Run `mkvirtualenv agila`
 5. Run `workon agila`
