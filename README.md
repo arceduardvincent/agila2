@@ -19,7 +19,7 @@ Browse to http://localhost:3000/
 npm install
 pip install -r requirements.txt
 ./manage.py migrate
-./manage.py loaddata sites
+./manage.py loaddata fixtures/roles.json
 npm run dev
 ```
 
