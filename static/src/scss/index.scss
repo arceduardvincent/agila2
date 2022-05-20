@@ -1316,4 +1316,352 @@ html body .page-content__reviews .reviews-list .review-card .review-card__date {
   font-style: italic;
 }
 
+html body .page-content--full {
+  padding: unset !important;
+}
+
+html body .page-content--full .home__content__image {
+  position: relative;
+  margin: 0;
+  padding: 2em 60px 4em 60px;
+}
+
+html body .page-content--full .home__content__image:before {
+  content: " ";
+  width: 100%;
+  min-height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+html body .page-content--full .home__content__image.home__content__image--search {
+  color: white !important;
+}
+
+html body .page-content--full .home__content__image.home__content__image--search .home_content__image__info__title {
+  color: white;
+}
+
+html body .page-content--full .home__content__image.home__content__image--search:before {
+  background-image: -webkit-gradient(linear, left top, right top, from(#125282), to(rgba(0, 0, 112, 0.3)));
+  background-image: linear-gradient(to right, #125282, rgba(0, 0, 112, 0.3));
+}
+
+html body .page-content--full .home__content__image img {
+  position: absolute;
+  width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info {
+  position: relative;
+  z-index: 3;
+  padding: 3em;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__meta > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2em 0 0;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__meta > span > span {
+  margin-right: .2em;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__title {
+  font-size: 3em;
+  line-height: 1.2em;
+  padding: .5em 0;
+  font-weight: bold;
+  color: #125282;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__description {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  width: 40%;
+  margin: 1em 0 2em 0;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__search {
+  margin-top: 1em;
+  width: 620px;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__search form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__search form .cs-inputText {
+  margin-bottom: 0;
+  margin-right: 1em;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .page-content--full .home__content__image .home_content__image__info__reviews__count {
+  color: black;
+  font-weight: bold;
+}
+
+html body .page-content-courseTracks h3 {
+  text-align: center;
+}
+
+html body .page-content-courseTracks .h3--inprogress {
+  margin: 1.5em 4em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .tracks-courses-list__heading {
+  font-size: 1.4em;
+  color: #125282;
+  margin: 1.5em 0 2em 0;
+  text-align: left;
+  width: 1400px;
+  max-width: 1400px;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .tracks-courses-list__heading .search-term {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-box {
+  padding: 1.5em;
+  border: 1px solid #E7E6E3;
+  max-width: 1400px;
+  margin-bottom: 3em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 28%;
+          flex: 0 0 28%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-img img {
+  width: 100%;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-img .courseTrack-img__type {
+  position: absolute;
+  top: 1em;
+  background: #009CFF;
+  padding: .5em 1.5em .5em 1em;
+  font-weight: bold;
+  font-size: .8em;
+  border-top-right-radius: .8em;
+  border-bottom-right-radius: .8em;
+  color: white;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 55%;
+          flex: 1 1 55%;
+  margin-left: 1.5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info > div {
+  margin-bottom: .8em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__author {
+  font-size: 1.2em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__author span:first-child {
+  color: #125282;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__author span:last-child {
+  color: #125282;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__title {
+  font-size: 2em;
+  color: #125282;
+  font-weight: bold;
+  margin-bottom: .5em !important;
+  line-height: 1.2em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__description {
+  line-height: 1.6em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__grades {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__grades .courseTrack-info__grade {
+  padding: 1em;
+  margin: 0 1.5em 0 0;
+  background: #E7E6E3;
+  text-align: center;
+  min-width: 80px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #C7DEEE;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__grades .courseTrack-info__grade > div:first-child {
+  color: #125282;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__grades .courseTrack-info__grade > div:nth-child(2) {
+  margin: .1em 0 .5em 0;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__grades .courseTrack-info__grade > div:last-child {
+  color: #63BB6C;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-info__meta > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-cta {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 15%;
+          flex: 0 0 15%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card .courseTrack-cta > div:first-child {
+  margin-bottom: .5em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card--course {
+  margin-left: 6em;
+  margin-top: 2em;
+  font-size: .95em;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card--course .courseTrack-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card--course .courseTrack-img img {
+  width: 100%;
+  height: auto;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card--course .courseTrack-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 55%;
+          flex: 1 1 55%;
+}
+
+html body .page-content-courseTracks .tracks-courses-list .courseTrack-card--track .courseTrack-img__type {
+  background: #63BB6C !important;
+  color: white;
+}
+
+html body .page-content-recommendations {
+  margin: 3em 0 5em 0;
+}
+
+html body .page-content-recommendations h3 {
+  text-align: center;
+  color: #125282;
+}
+
+html body .page-content--home .page-content-recommendations__description {
+  text-align: center;
+  font-size: 1.4em;
+  margin: .5em 0 2em 0;
+}
+
+
 /*# sourceMappingURL=index.css.map */

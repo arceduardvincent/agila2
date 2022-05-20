@@ -1,0 +1,271 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block body_base %}
+<main class="page-container">
+    <section class="page-content--full">
+
+        <div class="home__content__image home__content__image--search">
+
+            <img src="{% static 'images/feat-home.png' %}" >
+
+            <div class="home_content__image__info">
+
+                <div class="home_content__image__info__title">Course Catalog</div>
+
+                <p class="home_content__image__info__description">
+                    Check out our updated course catalog and find the lab activities you are looking for.
+                </p>
+
+                <div class="home_content__image__info__search">
+                    <form action="" method="GET">
+                        <div class="cs-inputText">
+                            <input name="search" type="text" class="" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="Search for Courses / Tracks.">
+                        </div>
+                        <button class="cs-button">
+                            <span class="material-icons">search</span>
+                                Search
+                        </button>
+<!--                        <a href="#" class="cs-button">-->
+<!--                            <span class="material-icons">search</span>-->
+<!--                                Search-->
+<!--                        </a>-->
+                        {% for results in result %}
+                            {{ results.code }}
+                            {{ results.title }}
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="page-content page-content--home">
+
+        <section class="page-content-courseTracks">
+
+            <div class="tracks-courses-list">
+                <p class="tracks-courses-list__heading">Results for searching: "<span class="search-term">Data Science</span>"</p>
+
+                <div class="courseTrack-box">
+
+                    <div class="courseTrack-card courseTrack-card--track">
+                        <div class="courseTrack-img">
+                            <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+                            <div class="courseTrack-img__type">
+                                        TRACK
+                            </div>
+                        </div>
+                        <div class="courseTrack-info">
+                            <div class="courseTrack-info__author">
+                                <span>AZ400</span> <span>|</span> by <span>University of Makati</span>
+                            </div>
+                            <div class="courseTrack-info__title">
+                                Azure DevOps: Designing and Implementing Microsoft DevOps Solutions
+                            </div>
+                            <div>
+                                <span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                    <span class="material-icons material-icons-star">star_rate</span>
+
+                                </span>
+                            </div>
+                            <div class="courseTrack-info__description">
+                                Responsibilities for this role include designing and implementing strategies for collaboration, code, infrastructure, source control, security, compliance, continuous integration, testing, delivery, monitoring, and feedback.
+                            </div>
+                            <div class="courseTrack-info__meta">
+                                <span>
+                                    <span class="material-icons">trending_up</span>
+                                    Beginner
+                                </span>
+                                <span>
+                                    <span class="material-icons">restore</span>
+                                    1 hour 30 minutes
+                                </span>
+                            </div>
+                        </div>
+                        <div class="courseTrack-cta">
+                            <div>
+                                <a href="" class="cs-button">View Track</a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section class="page-content-recommendations">
+
+            <h3>Data Science and AI Lab Courses</h3>
+
+            <div class="page-content-recommendations__description">
+                Enroll to build your resume with Data Science and AI skills.
+            </div>
+
+            <div class="course-cards mdl-grid">
+                <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                    <div class="course-card__top">
+
+                        <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+                         <div class="course-card__top__foreground">
+                              <div class="course-card__label">
+                                  <div>
+                                      <span></span>Lab Track
+                                  </div>
+                              </div>
+                             <div class="course-card__title">
+                                 <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                             </div>
+                         </div>
+                     </div>
+
+                    <div class="course-card__bottom">
+
+                        <div class="lab_content__image__info__reviews">
+
+                            <span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star">star_rate</span>
+
+                            </span>
+
+                            <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                        </div>
+
+                        <div class="course-card__description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        </div>
+
+                        <a href="#" class="cs-button">
+                            <span class="material-icons">add_shopping_cart</span>
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                    <div class="course-card__top">
+
+                        <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                        <div class="course-card__top__foreground">
+
+                            <div class="course-card__label">
+                                <div>
+                                    <span></span>Lab Track
+                                </div>
+                            </div>
+                            <div class="course-card__title">
+                                <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="course-card__bottom">
+
+                        <div class="lab_content__image__info__reviews">
+
+                            <span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star">star_rate</span>
+                             </span>
+
+                            <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                        </div>
+
+                        <div class="course-card__description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        </div>
+
+                        <a href="#" class="cs-button">
+                            <span class="material-icons">add_shopping_cart</span>
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                 </div>
+
+                <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                    <div class="course-card__top">
+
+                        <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                        <div class="course-card__top__foreground">
+
+                            <div class="course-card__label">
+                                <div>
+                                    <span></span>Lab Track
+                                </div>
+                            </div>
+                            <div class="course-card__title">
+                                <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="course-card__bottom">
+
+                        <div class="lab_content__image__info__reviews">
+
+                            <span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                <span class="material-icons material-icons-star">star_rate</span>
+
+                            </span>
+
+                            <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                        </div>
+
+                        <div class="course-card__description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        </div>
+
+                        <a href="#" class="cs-button">
+                            <span class="material-icons">add_shopping_cart</span>
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+{% endblock %}

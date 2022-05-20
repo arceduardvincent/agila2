@@ -10,3 +10,5 @@ from .course import (
 from .policy import (
     PrivacyPolicyView, TermsUseView
 )
+
+from .search import *
