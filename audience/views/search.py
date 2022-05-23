@@ -4,9 +4,6 @@ from django.http import HttpResponse
 from lab.models import Course
 from django.shortcuts import render
 
-from lab.models import Course
-
-
 class SearchView(View):
     template_name = 'audience/search.html'
 

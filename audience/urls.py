@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from django.urls import path
+from django.urls import path, reverse
 from django.contrib.auth.decorators import login_required
 from .views import *
 
@@ -23,4 +23,7 @@ urlpatterns = [
         name='audience-lab-track-create'),
     url(r'^course/gradebook/$', login_required(
         SubscriberGradeBookList.as_view()), name='course-gradebook-view'),
+    url(r'^search$', login_required(
+            Search.as_view()), name='search-view'),
 ]
+
