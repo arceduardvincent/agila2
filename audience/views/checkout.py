@@ -4,14 +4,11 @@ from django.http import HttpResponse
 from lab.models import Course
 from django.shortcuts import render
 
-class SearchView(View):
-    template_name = 'audience/search.html'
+
+class CheckoutView(View):
+    template_name = 'audience/checkout.html'
 
     def get(self, request, *args, **kwargs):
-        search = request.GET.get('search')
-        result = Course.objects.filter(title=search)
         context = {
-            'result': result,
-            'search': search
         }
         return render(self.request, self.template_name, context)

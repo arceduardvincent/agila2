@@ -1,4 +1,6 @@
 from django.views.generic import TemplateView
+from django.core.mail import send_mail
+from django.conf import settings
 from users.models import (
     ADMIN_ROLE,
     STAFF_ROLE,
@@ -24,6 +26,22 @@ class DashboardView(TemplateView):
 
 class AnonymousDashboard(DashboardView):
     template_name = 'audience/anonymous/dashboard.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DashboardView, self).get_context_data(**kwargs)
+        courses = Course.objects.all()
+        email = self.request.GET.get("email")
+        subject = 'Thank you for registering to our site'
+        message = ' it  means a world to us '
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email, ]
+        send_mail(subject, message, email_from, recipient_list)
+
+        context.update({
+            'dashboard_view': True,
+            'courses': courses
+        })
+        return context
 
 
 class AdminDashboardView(DashboardView):

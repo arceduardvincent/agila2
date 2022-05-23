@@ -1,0 +1,273 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block body_base %}
+        <main class="page-container">
+
+            <div class="page-content page-checkout">
+
+                <section class="page-content-checkout">
+
+                    <h3>Checkout</h3>
+
+                    <div class="checkout-box">
+
+                        <div class="checkout-details">
+
+                            <div class="checkout-details-heading">
+                                <div class="checkout-details-heading__course">TRACKS / COURSES</div>
+                                <div class="checkout-details-heading__price">PRICE</div>
+                            </div>
+
+                            <div class="checkout-details-courses">
+
+                                <div class="checkout-trackCourse checkout-trackCourse--track">
+
+                                    <div class="checkout-trackCourse__close"><span class="material-icons">close</span></div>
+                                    <div class="checkout-trackCourse__img">
+                                        <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+                                    </div>
+                                    <div class="checkout-trackCourse__title">
+                                        <div><span class="checkout-trackCourse__label">TRACK</span></div>
+                                        <div class="checkout-trackCourse__name"><a href="#">AZ-400: Azure Devops</a></div>
+
+                                        <div>
+                                            Courses Included in this Track: <a href="#">Work with Git Enterprise DevOps</a>, <a href="#">Designing and Implementing Microsoft DevOps Solutions</a>, <a href="#">Enabling Continuous Integration with Azure Pipelines</a>
+                                        </div>
+                                    </div>
+                                    <div class="checkout-trackCourse__price">P12.99</div>
+
+                                </div>
+
+                                <div class="checkout-trackCourse">
+                                    <div class="checkout-trackCourse__close"><span class="material-icons">close</span></div>
+                                    <div class="checkout-trackCourse__img">
+                                        <img src="{% static 'images/feat-recommended2.jpg' %}" alt="">
+                                    </div>
+                                    <div class="checkout-trackCourse__title">
+                                        <div><span class="checkout-trackCourse__label">COURSE</span></div>
+                                        <div class="checkout-trackCourse__name"><a href="#">Introduction to Data Science</a></div>
+                                        <div>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        </div>
+                                    </div>
+                                    <div class="checkout-trackCourse__price">P12.99</div>
+                                </div>
+
+                                <div class="checkout-trackCourse">
+                                    <div class="checkout-trackCourse__close"><span class="material-icons">close</span></div>
+                                    <div class="checkout-trackCourse__img">
+                                        <img src="{% static 'images/feat-recommended3.jpg' %}" alt="">
+                                    </div>
+                                    <div class="checkout-trackCourse__title">
+                                        <div><span class="checkout-trackCourse__label">COURSE</span></div>
+                                        <div class="checkout-trackCourse__name"><a href="#">Data Query with Transact SQL</a></div>
+                                        <div>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        </div>
+                                    </div>
+                                    <div class="checkout-trackCourse__price">P12.99</div>
+                                </div>
+                            </div>
+
+                            <div class="checkout-details-total">
+                                <div class="checkout-details-total__label">Grand Total: </div>
+                                <div class="checkout-details-total__grandTotal">P49.98</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="checkout-payment">
+
+                            <div class="cs-inputText">
+                                <input type="text" class="" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="Email">
+                            </div>
+                            <div class="cs-inputText">
+                                <input type="text" class="" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="Card Information">
+                            </div>
+                            <div class="cs-inputText">
+                                <input type="text" class="" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="Name on Card">
+                            </div>
+                            <div class="cs-inputText">
+                                <input type="text" class="" id="title"  pattern="[A-Z,a-z,0-9]*" placeholder="Country or Region ">
+                            </div>
+                            <div>
+                                <button class="cs-button">Checkout</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+                <section class="page-content-recommendations">
+
+                    <h3>Data Science and AI Lab Courses</h3>
+
+                    <div class="page-content-recommendations__description">
+                        Enroll to build your resume with Data Science and AI skills.
+                    </div>
+
+                    <div class="course-cards mdl-grid">
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+        </main>
+{% endblock %}

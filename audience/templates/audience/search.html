@@ -31,10 +31,10 @@
 <!--                            <span class="material-icons">search</span>-->
 <!--                                Search-->
 <!--                        </a>-->
-                        {% for results in result %}
-                            {{ results.code }}
-                            {{ results.title }}
-                        {% endfor %}
+<!--                        {% for results in result %}-->
+<!--                            {{ results.code }}-->
+<!--                            {{ results.title }}-->
+<!--                        {% endfor %}-->
                     </form>
                 </div>
             </div>
@@ -45,12 +45,12 @@
     <div class="page-content page-content--home">
 
         <section class="page-content-courseTracks">
-
+            {% if result %}
             <div class="tracks-courses-list">
-                <p class="tracks-courses-list__heading">Results for searching: "<span class="search-term">Data Science</span>"</p>
+                <p class="tracks-courses-list__heading">Results for searching: "<span class="search-term">{{ search }}</span>"</p>
 
                 <div class="courseTrack-box">
-
+                {% for results in result %}
                     <div class="courseTrack-card courseTrack-card--track">
                         <div class="courseTrack-img">
                             <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
@@ -60,10 +60,10 @@
                         </div>
                         <div class="courseTrack-info">
                             <div class="courseTrack-info__author">
-                                <span>AZ400</span> <span>|</span> by <span>University of Makati</span>
+                                <span>{{ results.code }}</span> <span>|</span> by <span>University of Makati</span>
                             </div>
                             <div class="courseTrack-info__title">
-                                Azure DevOps: Designing and Implementing Microsoft DevOps Solutions
+                                {{ results.title }}
                             </div>
                             <div>
                                 <span>
@@ -98,13 +98,13 @@
 
 
                     </div>
-
+                {% endfor %}
 
                 </div>
 
 
             </div>
-
+            {% endif %}
         </section>
 
         <section class="page-content-recommendations">
@@ -266,6 +266,4 @@
     </div>
 
 </main>
-
-
 {% endblock %}
