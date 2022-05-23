@@ -1,18 +1,409 @@
 {% extends "site_base.html" %}
+{% load static %}
 
 {% block body_base %}
-    <main class="page-container">
-        <div class="page-content">
-            <section class="page-content-lab mdl-grid">
-                <section class="page-content-lab__content mdl-cell mdl-cell--9-col">
-                    <div class="lab__content__image">
-                        <img src="assets/img/feat-headerImage.jpg" alt="">
-                        <div class="lab_content__image__info">
-                            <div class="lab_content__image__info__title"> "Big things happen here!"</div>
+        <main class="page-container">
+
+            <section class="page-content--full">
+
+                <div class="home__content__image">
+
+                     <img src="{% static 'images/feat-home.png' %}" >
+
+                    <div class="home_content__image__info">
+
+                        <div class="home_content__image__info__title">Virtual Labs for Students and Professionals</div>
+
+                        <p class="home_content__image__info__description">
+                            Break into the competitive workforce or be ready on your next certification exam with our practical hands-on lab courses and tracks that allows you to focus on improving your skill set with our virtual lab environments.
+                        </p>
+
+                        <div class="home_content__image__info__search">
+                            <form method="get" action="." >
+                                {% csrf_token %}
+                                <div class="cs-inputText">
+                                    <input type="text" class="" id="title"  name="email" placeholder="Enter your Email Address ">
+                                </div>
+                                <button class="cs-button">
+                                    <span class="material-icons">email</span>
+                                        Join
+                                </button>
+                            </form>
                         </div>
                     </div>
-                </section>
+                </div>
+
             </section>
-        </div>
-    </main>
+
+            <div class="page-content page-content--home">
+
+                <section class="page-content-partners">
+                    <h3>Trusted Partners</h3>
+                    <div class="partners__images">
+                        <img src="{% static 'images/logo-white-microsoft.png' %}" alt="Microsoft White Logo">
+                        <img src="{% static 'images/logo-white-aws.png' %}" alt="AWS White Logo">
+                        <img src="{% static 'images/logo-white-alibaba.png' %}" alt="Alibaba White Logo">
+                        <img src="{% static 'images/logo-white-microsoft.png' %}" alt="Microsoft White Logo">
+                        <img src="{% static 'images/logo-white-aws.png' %}" alt="AWS White Logo">
+                        <img src="{% static 'images/logo-white-alibaba.png' %}" alt="Alibaba White Logo">
+                    </div>
+                </section>
+
+                <section class="page-content-recommendations">
+
+                    <h3>Data Science and AI Lab Courses</h3>
+
+                    <div class="page-content-recommendations__description">
+                        Enroll to build your resume with Data Science and AI skills.
+                    </div>
+
+                    <div class="course-cards mdl-grid">
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <section class="page-content--full">
+
+                <div class="page-content--promotion">
+
+                    <div class="promotion__image">
+                         <img src="{% static 'images/feat-recommended2.jpg' %}" alt="">
+                    </div>
+
+                    <div class="promotion__description">
+                        <h3>Custom Lab Environments</h3>
+                        <p>
+                            Our virtual lab environments are designed to help practice real-world scenarios align with your existing course curriculum across all departments: Computer Science, Engineering, Architecture, Business and Statistics, Multimedia, Design, Psychology and Medicine.
+                        </p>
+                        <div>
+                            <a href="#" class="cs-button cs-button--white">Register</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="page-content page-content--home">
+
+
+                <section class="page-content-recommendations">
+
+                    <h3>Cloud Computing Courses</h3>
+
+                    <div class="page-content-recommendations__description">
+                        Dive deeper into cloud technogy concepts with Azure and AWS cloud.
+                    </div>
+
+                    <div class="course-cards mdl-grid">
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
+
+                            <div class="course-card__top">
+
+                                <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
+
+                                <div class="course-card__top__foreground">
+
+                                    <div class="course-card__label">
+                                        <div>
+                                            <span></span>Lab Track
+                                        </div>
+                                    </div>
+                                    <div class="course-card__title">
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="course-card__bottom">
+
+                                <div class="lab_content__image__info__reviews">
+
+                                    <span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+
+                                    </span>
+
+                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                </div>
+
+                                <div class="course-card__description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                </div>
+
+                                <a href="#" class="cs-button">
+                                    <span class="material-icons">add_shopping_cart</span>
+                                        Add to Cart
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+            </div>
+
+        </main>
+
 {% endblock %}

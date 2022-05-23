@@ -17,6 +17,7 @@ django-model-utils = "*"
 asgiref = "*"
 django-tinymce = "*"
 django-crispy-forms = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
