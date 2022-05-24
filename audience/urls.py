@@ -23,7 +23,7 @@ urlpatterns = [
         name='audience-lab-track-create'),
     url(r'^course/gradebook/$', login_required(
         SubscriberGradeBookList.as_view()), name='course-gradebook-view'),
-    url(r'^search$', login_required(
-            Search.as_view()), name='search-view'),
+    # url(r'^search$', login_required(
+    #         Search.as_view()), name='search-view'),
 ]
 
