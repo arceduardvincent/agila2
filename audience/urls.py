@@ -10,7 +10,7 @@ urlpatterns = [
     path('privacy_policy', PrivacyPolicyView.as_view(), 
          name='privacy_policy'),
     path('search', SearchView.as_view(), name='search'),
-    path('checkout', CheckoutView.as_view(), name='checkout'),
+    path('checkout', login_required(CheckoutView.as_view()), name='checkout'),
     path('terms_use', PrivacyPolicyView.as_view(),
          name='terms_use'),
     url(r'^course/detail/(?P<pk>\d+)/$', CourseContentView.as_view(),
