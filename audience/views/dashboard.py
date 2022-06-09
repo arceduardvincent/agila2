@@ -6,7 +6,7 @@ from users.models import (
     STAFF_ROLE,
     CUSTOMER_ROLE
 )
-from lab.models import Course
+from lab.models import Course, Category
 
 
 class HomeView(TemplateView):
@@ -19,7 +19,7 @@ class DashboardView(TemplateView):
         courses = Course.objects.all()
         context.update({
             'dashboard_view': True,
-            'courses': courses
+            'courses': courses,
         })
         return context
 
@@ -29,17 +29,25 @@ class AnonymousDashboard(DashboardView):
 
     def get_context_data(self, **kwargs):
         context = super(DashboardView, self).get_context_data(**kwargs)
-        courses = Course.objects.all()
         email = self.request.GET.get("email")
         subject = 'Thank you for registering to our site'
         message = ' it  means a world to us '
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email, ]
         send_mail(subject, message, email_from, recipient_list)
+        category1 = Category.objects.get(id=1)
+        category2 = Category.objects.get(id=2)
+        courses1 = Course.objects.filter(
+            category=category1)
+        courses2 = Course.objects.filter(
+            category=category2)
 
         context.update({
             'dashboard_view': True,
-            'courses': courses
+            'category1': category1,
+            'category2': category2,
+            'courses1': courses1,
+            'courses2': courses2,
         })
         return context
 

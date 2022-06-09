@@ -52,9 +52,9 @@ class CreateCourseView(CreateView):
     def get_context_data(self, **kwargs):
         context = super(CreateCourseView, self).get_context_data(**kwargs)
         course = None
-        session_course_id = self.request.session.get('course_id', None)
-        if session_course_id:
-            course = Course.objects.get(id=session_course_id)
+        # session_course_id = self.request.session.get('course_id', None)
+        # if session_course_id:
+        #     course = Course.objects.get(id=session_course_id)
         data = {
             'course_is_active': True,
             'course': course

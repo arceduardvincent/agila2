@@ -1,3 +1,5 @@
+
+   
 {% extends "site_base.html" %}
 {% load static %}
 
@@ -51,15 +53,14 @@
 
                 <section class="page-content-recommendations">
 
-                    <h3>Data Science and AI Lab Courses</h3>
+                    <h3>{{ category1.name }}</h3>
 
                     <div class="page-content-recommendations__description">
-                        Enroll to build your resume with Data Science and AI skills.
+                        {{ category1.description }}
                     </div>
 
                     <div class="course-cards mdl-grid">
-                        {% for course in courses %}
-                        {% if course.category.name == 'Data Science and AI' %}
+                        {% for course in courses1 %}
                         <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
 
                             <div class="course-card__top">
@@ -85,19 +86,19 @@
                                 <div class="lab_content__image__info__reviews">
 
                                     <span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
                                         <span class="material-icons material-icons-star">star_rate</span>
 
                                     </span>
 
-                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                    <span class="lab_content__image__info__reviews__count">(0 Reviews)</span>
                                 </div>
 
                                 <div class="course-card__description">
-                                    {{ course.content|safe }}
+                                    {{ course.overview }}
                                 </div>
 
                                 <a href="#" class="cs-button">
@@ -108,7 +109,6 @@
                             </div>
 
                         </div>
-                        {% endif %}
                         {% endfor %}
 
 
@@ -146,15 +146,14 @@
 
                 <section class="page-content-recommendations">
 
-                    <h3>Cloud Computing Courses</h3>
+                    <h3>{{ category2.name }}</h3>
 
                     <div class="page-content-recommendations__description">
-                        Dive deeper into cloud technogy concepts with Azure and AWS cloud.
+                        {{ category2.description }}
                     </div>
 
                     <div class="course-cards mdl-grid">
-                        {% for course2 in courses %}
-                        {% if course2.category.name == 'Cloud Computing' %}
+                        {% for course2 in courses2 %}
                         <div class="course-card course-card--track mdl-cell mdl-cell--4-col">
 
                             <div class="course-card__top">
@@ -180,19 +179,20 @@
                                 <div class="lab_content__image__info__reviews">
 
                                     <span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
-                                        <span class="material-icons material-icons-star-shaded">star_rate</span>
+<!--                                        <span class="material-icons material-icons-star-shaded">star_rate</span>-->
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
+                                        <span class="material-icons material-icons-star">star_rate</span>
                                         <span class="material-icons material-icons-star">star_rate</span>
 
                                     </span>
 
-                                    <span class="lab_content__image__info__reviews__count">(41 Reviews)</span>
+                                    <span class="lab_content__image__info__reviews__count">(0 Reviews)</span>
                                 </div>
 
                                 <div class="course-card__description">
-                                    {{ course2.content|safe }}
+                                    {{ course2.overview }}
                                 </div>
 
                                 <a href="#" class="cs-button">
@@ -203,10 +203,7 @@
                             </div>
 
                         </div>
-                        {% endif %}
                         {% endfor %}
-
-
                     </div>
 
                 </section>
