@@ -1,6 +1,6 @@
 from .dashboard import dashboard_view
 from .search import SearchView
-from .checkout import CheckoutView
+from .checkout import *
 from .course import (
     CourseContentView,
     CreateCourseView,

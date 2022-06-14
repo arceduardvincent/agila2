@@ -57,7 +57,7 @@ LOCAL_APPS = [
     'core.apps.UsersConfig',
     'core.apps.LabConfig',
     'core.apps.ReviewsConfig',
-    # 'core.apps.MarketplaceConfig',
+    'core.apps.MarketplaceConfig',
 ]
 
 THIRD_PARTY_APPS = [

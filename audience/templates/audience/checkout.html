@@ -22,58 +22,49 @@
 
                             <div class="checkout-details-courses">
 
-                                <div class="checkout-trackCourse checkout-trackCourse--track">
+<!--                                <div class="checkout-trackCourse checkout-trackCourse&#45;&#45;track">-->
 
-                                    <div class="checkout-trackCourse__close"><span class="material-icons">close</span></div>
-                                    <div class="checkout-trackCourse__img">
-                                        <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">
-                                    </div>
-                                    <div class="checkout-trackCourse__title">
-                                        <div><span class="checkout-trackCourse__label">TRACK</span></div>
-                                        <div class="checkout-trackCourse__name"><a href="#">AZ-400: Azure Devops</a></div>
+<!--                                    <div class="checkout-trackCourse__close"><span class="material-icons">close</span></div>-->
+<!--                                    <div class="checkout-trackCourse__img">-->
+<!--                                        <img src="{% static 'images/feat-recommended1.jpg' %}" alt="">-->
+<!--                                    </div>-->
 
-                                        <div>
-                                            Courses Included in this Track: <a href="#">Work with Git Enterprise DevOps</a>, <a href="#">Designing and Implementing Microsoft DevOps Solutions</a>, <a href="#">Enabling Continuous Integration with Azure Pipelines</a>
-                                        </div>
-                                    </div>
-                                    <div class="checkout-trackCourse__price">P12.99</div>
+<!--                                    <div class="checkout-trackCourse__title">-->
+<!--                                        <div><span class="checkout-trackCourse__label">TRACK</span></div>-->
+<!--                                        <div class="checkout-trackCourse__name"><a href="#">AZ-400: Azure Devops</a></div>-->
 
-                                </div>
+<!--                                        <div>-->
+<!--                                            Courses Included in this Track: <a href="#">Work with Git Enterprise DevOps</a>, <a href="#">Designing and Implementing Microsoft DevOps Solutions</a>, <a href="#">Enabling Continuous Integration with Azure Pipelines</a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="checkout-trackCourse__price">P12.99</div>-->
 
+<!--                                </div>-->
+                                {% for results in result %}
                                 <div class="checkout-trackCourse">
-                                    <div class="checkout-trackCourse__close"><span class="material-icons">close</span></div>
+                                    <div class="checkout-trackCourse__close"><a href="{% url 'audience:delete_item' results.id %}"><span class="material-icons">close</span></a></div>
+
                                     <div class="checkout-trackCourse__img">
                                         <img src="{% static 'images/feat-recommended2.jpg' %}" alt="">
                                     </div>
                                     <div class="checkout-trackCourse__title">
                                         <div><span class="checkout-trackCourse__label">COURSE</span></div>
-                                        <div class="checkout-trackCourse__name"><a href="#">Introduction to Data Science</a></div>
-                                        <div>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                        </div>
-                                    </div>
-                                    <div class="checkout-trackCourse__price">P12.99</div>
-                                </div>
 
-                                <div class="checkout-trackCourse">
-                                    <div class="checkout-trackCourse__close"><span class="material-icons">close</span></div>
-                                    <div class="checkout-trackCourse__img">
-                                        <img src="{% static 'images/feat-recommended3.jpg' %}" alt="">
-                                    </div>
-                                    <div class="checkout-trackCourse__title">
-                                        <div><span class="checkout-trackCourse__label">COURSE</span></div>
-                                        <div class="checkout-trackCourse__name"><a href="#">Data Query with Transact SQL</a></div>
+                                        <div class="checkout-trackCourse__name"><a href="#">{{ results.course.title }}</a></div>
                                         <div>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                            {{ results.item.course.overview|safe }}
                                         </div>
                                     </div>
-                                    <div class="checkout-trackCourse__price">P12.99</div>
+                                    <div class="checkout-trackCourse__price">
+                                        {{ results.item.price }}</div>
+
                                 </div>
+                                {% endfor %}
                             </div>
 
                             <div class="checkout-details-total">
                                 <div class="checkout-details-total__label">Grand Total: </div>
-                                <div class="checkout-details-total__grandTotal">P49.98</div>
+                                <div class="checkout-details-total__grandTotal">P{{ total }}</div>
                             </div>
 
                         </div>

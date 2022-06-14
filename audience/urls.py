@@ -10,7 +10,7 @@ urlpatterns = [
     path('privacy_policy', PrivacyPolicyView.as_view(), 
          name='privacy_policy'),
     path('search', SearchView.as_view(), name='search'),
-    path('checkout', CheckoutView.as_view(), name='checkout'),
+    path('checkout', login_required(CheckoutView.as_view()), name='checkout'),
     path('terms_use', PrivacyPolicyView.as_view(),
          name='terms_use'),
     url(r'^course/detail/(?P<pk>\d+)/$', CourseContentView.as_view(),
@@ -23,6 +23,8 @@ urlpatterns = [
         name='audience-lab-track-create'),
     url(r'^course/gradebook/$', login_required(
         SubscriberGradeBookList.as_view()), name='course-gradebook-view'),
-    # path('order', order_item, name='order_item'),
+    path('order/<int:id>', OrderView.as_view(), name='order_item'),
+    path('order/<int:id>/remove', RemoveOrderView.as_view(),
+         name='delete_item'),
 ]
 

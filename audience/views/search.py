@@ -11,13 +11,15 @@ class SearchView(View):
 
     def get(self, request, *args, **kwargs):
         search = request.GET.get('search')
-        result = Course.objects.filter(title__icontains=search)
         category = Category.objects.get(id=2)
         courses = Course.objects.filter(category=category)
         context = {
-            'result': result,
-            'search': search,
             'courses': courses,
             'category': category
         }
+        if search is not None:
+            result = Course.objects.filter(title__icontains=search)
+            context['result'] = result
+            context['search'] = search
+
         return render(self.request, self.template_name, context)

@@ -11,3 +11,7 @@ class BookingAdmin(admin.ModelAdmin):
     list_filter = ('status', )
     search_fields = ('customer__first_name', 'customer__last_name',
                      'customer__email', 'customer__username', )
+
+
+admin.site.register(models.Cart)
+admin.site.register(models.OrderItem)
